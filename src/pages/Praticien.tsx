@@ -41,49 +41,11 @@ function Praticien() {
           </p>
         </motion.div>
 
-        {/* Contact Information */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-12"
-        >
-          <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-6 text-center">Nos Coordonnées</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
-              <Phone className="w-5 h-5" aria-hidden="true" />
-              <div>
-                <p>Fixe : <a href="tel:+33140850022" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">01 40 85 00 22</a></p>
-                <p>Mobile : <a href="tel:+33603736838" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">06 03 73 68 38</a></p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
-              <MapPin className="w-5 h-5" aria-hidden="true" />
-              <span>9 Rue Roque de Fillol, 92800 Puteaux, France</span>
-            </div>
-            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
-              <Globe className="w-5 h-5" aria-hidden="true" />
-              <span>Français, Anglais, Espagnol</span>
-            </div>
-            <div className="flex items-center justify-center md:justify-start">
-              <AccessibleButton
-                href={doctolibUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
-                aria-label="Prendre rendez-vous sur Doctolib - Ouvre dans un nouvel onglet"
-              >
-                Prendre rendez-vous
-              </AccessibleButton>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Présentation de Maison Sealiah */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-12"
         >
           <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-6 text-center">Maison Sealiah</h2>
@@ -114,7 +76,7 @@ function Praticien() {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-12"
         >
           <h2 className="text-3xl font-serif text-sealiah-eucalyptus mb-12 text-center">
@@ -126,7 +88,7 @@ function Praticien() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -139,7 +101,32 @@ function Praticien() {
               />
               <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-2">Arnaud Benhamou</h3>
               <p className="text-sealiah-amber font-semibold mb-4">Masseur-Kinésithérapeute Ostéopathe</p>
-              <p className="text-sealiah-amber mb-4">Fondateur de Maison Sealiah</p>
+              <p className="text-sealiah-amber mb-6">Fondateur de Maison Sealiah</p>
+              
+              {/* Présentation personnelle d'Arnaud */}
+              <div className="text-left space-y-4 text-sealiah-amber mb-6">
+                <p>
+                  Bonjour et bienvenue chez Maison Sealiah,
+                </p>
+                <p>
+                  Ma pratique repose sur une approche intégrative qui vise à identifier et traiter les causes profondes de vos troubles, au-delà des seuls symptômes.
+                </p>
+                <p>
+                  Enrichi par un parcours international, j'ai exploré diverses pratiques thérapeutiques à travers le monde — Bali, Inde, Thaïlande, et l'Université de Médecine Chinoise de Pékin — qui m'ont permis d'élargir ma vision du soin.
+                </p>
+                <p>
+                  Convaincu que la médecine conventionnelle, bien que précieuse, ne suffit pas toujours à répondre aux besoins de l'être dans sa globalité, j'ai choisi de me spécialiser en ostéopathie, afin d'offrir une prise en charge complète, précise et personnalisée.
+                </p>
+                <p>
+                  Je propose également des conseils en phytothérapie, intégrant les bienfaits des plantes, fruits, minéraux et végétaux dans une démarche de régénération tissulaire et de soutien quotidien à la santé.
+                </p>
+                <p>
+                  Au plaisir de vous accueillir et de vous accompagner avec attention, sérieux et engagement sur le chemin du soin.
+                </p>
+                <p className="font-serif text-sealiah-eucalyptus text-center mt-4">
+                  Arnaud Benhamou
+                </p>
+              </div>
               
               <div className="text-left space-y-4 text-sealiah-amber">
                 <h4 className="text-lg font-serif text-sealiah-eucalyptus mb-3">Diplômes</h4>
@@ -148,13 +135,25 @@ function Praticien() {
                   <p><strong>2015</strong> - Diplôme d'État de Masseur-Kinésithérapeute - Université Alfonso X el Sabio (UAX) - Madrid</p>
                 </div>
               </div>
+
+              <div className="mt-6">
+                <AccessibleButton
+                  href={doctolibUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
+                  aria-label="Prendre rendez-vous avec Arnaud Benhamou sur Doctolib - Ouvre dans un nouvel onglet"
+                >
+                  Prendre rendez-vous
+                </AccessibleButton>
+              </div>
             </motion.div>
 
             {/* Clément Jankowski */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -185,29 +184,63 @@ function Praticien() {
                   </p>
                 </div>
               </div>
+
+              <div className="mt-6">
+                <AccessibleButton
+                  href={doctolibUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
+                  aria-label="Prendre rendez-vous avec Clément Jankowski sur Doctolib - Ouvre dans un nouvel onglet"
+                >
+                  Prendre rendez-vous
+                </AccessibleButton>
+              </div>
             </motion.div>
           </div>
         </motion.section>
 
-        {/* CTA */}
+        {/* Contact Information - Déplacé en bas */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-center"
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-12"
         >
-          <div className="bg-gradient-to-r from-sealiah-eucalyptus to-sealiah-amber rounded-2xl p-8 text-sealiah-ivory">
-            <h2 className="text-3xl font-serif mb-4">
-              Prêt à commencer votre parcours de soins ?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Prenez rendez-vous avec l'un de nos praticiens pour une prise en charge personnalisée.
-            </p>
+          <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-6 text-center">Nos Coordonnées</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              <div>
+                <p>Fixe : <a href="tel:+33140850022" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">01 40 85 00 22</a></p>
+                <p>Mobile : <a href="tel:+33603736838" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">06 03 73 68 38</a></p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
+              <Mail className="w-5 h-5" aria-hidden="true" />
+              <a 
+                href="mailto:contact@maisonsealiah.fr" 
+                className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1"
+                aria-label="Envoyer un email à contact@maisonsealiah.fr"
+              >
+                contact@maisonsealiah.fr
+              </a>
+            </div>
+            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
+              <MapPin className="w-5 h-5" aria-hidden="true" />
+              <span>9 Rue Roque de Fillol, 92800 Puteaux, France</span>
+            </div>
+            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
+              <Globe className="w-5 h-5" aria-hidden="true" />
+              <span>Français, Anglais, Espagnol</span>
+            </div>
+          </div>
+          <div className="flex justify-center mt-8">
             <AccessibleButton
               href={doctolibUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sealiah-eucalyptus bg-sealiah-ivory hover:bg-sealiah-sand"
+              className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
               aria-label="Prendre rendez-vous sur Doctolib - Ouvre dans un nouvel onglet"
             >
               Prendre rendez-vous
