@@ -383,8 +383,8 @@ function Home() {
                 aria-label="En savoir plus sur Arnaud Benhamou, Masseur-Kinésithérapeute Ostéopathe"
               >
                 <OptimizedImage
-                  src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" 
-                  alt="Portrait professionnel d'Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe, fondateur de Maison Sealiah"
+                  src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Maison-Sealiah-prevenir-soigner-apaiser.png" 
+                  alt="Logo Maison Sealiah - Prévenir, Soigner, Apaiser"
                   className="w-40 h-40 rounded-full mx-auto mb-6 object-cover hover:scale-105 transition-transform duration-300"
                   width={160}
                   height={160}
