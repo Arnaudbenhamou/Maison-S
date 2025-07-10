@@ -336,15 +336,24 @@ function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <AccessibleButton
-              href={doctolibUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
-              aria-label="Découvrir et réserver les Combos Sealiah sur Doctolib - Ouvre dans un nouvel onglet"
-            >
-              Réserver mon Combo Sealiah
-            </AccessibleButton>
+            <div className="max-w-2xl mx-auto">
+              <AccessibleButton
+                href="https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret/booking/motives?specialityId=9&telehealth=false&placeId=practice-680748&motiveCategoryIds%5B%5D=449147&bookingFunnelSource=profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus mb-6"
+                aria-label="Réserver mon Combo Sealiah sur Doctolib - Ouvre dans un nouvel onglet"
+              >
+                Réserver mon Combo Sealiah
+              </AccessibleButton>
+              <p className="text-sealiah-amber text-center leading-relaxed">
+                Une fois réservé, un(e) thérapeute vous contactera pour établir, avec vous, le Combo Sealiah le plus adapté à vos besoins et votre état du moment.
+              </p>
+              <p className="text-sealiah-eucalyptus text-center mt-4 font-serif">
+                À Bientôt,<br />
+                L'équipe Maison Sealiah
+              </p>
+            </div>
           </div>
         </div>
       </section>
