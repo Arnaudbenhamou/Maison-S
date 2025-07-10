@@ -78,7 +78,7 @@ function Home() {
               transition={{ duration: 1 }}
             >
               <img 
-                src="/images/logo.png" 
+                src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Maison-Sealiah-prevenir-soigner-apaiser.png" 
                 alt="Maison Sealiah" 
                 className="w-full h-auto"
               />
