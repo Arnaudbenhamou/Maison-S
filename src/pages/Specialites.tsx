@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Activity, Heart, Stethoscope, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Activity, Heart, Stethoscope, ChevronRight, ChevronDown, Plus, Minus } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 import AccessibleButton from '../components/AccessibleButton';
 
 export default function Specialites() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [expandedSpecialty, setExpandedSpecialty] = useState<string | null>(null);
   const doctolibUrl = "https://www.doctolib.fr/cabinet-paramedical/puteaux/maison-sealiah-centre-de-sante-kinesitherapie-osteopathie";
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
+  };
+
+  const toggleSpecialty = (specialty: string) => {
+    setExpandedSpecialty(expandedSpecialty === specialty ? null : specialty);
   };
 
   const faqData = [
@@ -37,6 +42,49 @@ export default function Specialites() {
     {
       question: "Que dois-je apporter lors de ma première visite ?",
       answer: "Apportez votre carte vitale, votre ordonnance (si applicable), vos examens médicaux récents (radiographies, IRM, etc.) et une tenue confortable permettant les mouvements. Pour nos soins bien-être, venez simplement avec l'envie de vous détendre !"
+    }
+  ];
+
+  const specialties = [
+    {
+      id: 'kinesitherapie',
+      icon: <Activity className="w-12 h-12" />,
+      title: 'Kinésithérapie',
+      description: 'La kinésithérapie vise à traiter les troubles du mouvement et de la fonction à travers des techniques manuelles et des exercices thérapeutiques.',
+      services: [
+        'Rééducation post-traumatique',
+        'Thérapie manuelle',
+        'Rééducation posturale',
+        'Drainage lymphatique',
+        'Kinésithérapie respiratoire'
+      ],
+      detailedText: 'Chez Maison Sealiah, les séances de kinésithérapie sont pensées comme un véritable accompagnement thérapeutique, personnalisé et attentif.\n\nNotre équipe de kinésithérapeutes prend en charge une large variété de troubles musculo-squelettiques, post-traumatiques, respiratoires ou posturaux, avec un savoir-faire fondé sur l\'écoute, le toucher clinique et des techniques validées scientifiquement.\n\nChaque prise en charge commence par un bilan approfondi, permettant d\'adapter le protocole à vos besoins spécifiques : rééducation, soulagement des douleurs, reprise de mobilité, prévention des récidives.\n\nLes séances se déroulent dans un environnement calme et soigné, propice à une récupération optimale.\nNotre approche allie expertise médicale et qualité de présence, pour faire de chaque séance un moment de soin, mais aussi de recentrage.'
+    },
+    {
+      id: 'osteopathie',
+      icon: <Stethoscope className="w-12 h-12" />,
+      title: 'Ostéopathie',
+      description: 'L\'ostéopathie est une approche thérapeutique manuelle qui vise à restaurer la mobilité des tissus et l\'équilibre du corps.',
+      services: [
+        'Troubles musculo-squelettiques',
+        'Douleurs articulaires',
+        'Troubles digestifs',
+        'Maux de tête',
+        'Stress et tensions'
+      ],
+      detailedText: 'Chez Maison Sealiah, les séances d\'ostéopathie offrent un accompagnement global du corps et de ses équilibres.\n\nGrâce à une approche douce, précise et respectueuse, nos ostéopathes interviennent aussi bien sur les douleurs aiguës que sur les tensions chroniques, les troubles fonctionnels ou les déséquilibres posturaux.\n\nChaque consultation commence par un échange approfondi, suivi d\'un diagnostic manuel pour identifier les blocages ou restrictions de mobilité.\n\nNous privilégions une pratique sur-mesure, adaptée à chaque profil et chaque étape de vie : adultes, femmes enceintes, nourrissons, sportifs…\n\nDans l\'atmosphère naturellement apaisante de Maison Sealiah, l\'ostéopathie devient un temps de réajustement profond, qui agit autant sur le corps que sur le système nerveux, pour retrouver fluidité, ancrage et vitalité.'
+    },
+    {
+      id: 'bien-etre',
+      icon: <Heart className="w-12 h-12" />,
+      title: 'Bien-être',
+      description: 'Nos soins bien-être combinent différentes techniques de massage et de relaxation pour vous offrir un moment de détente profonde.',
+      services: [
+        'Massage aux huiles chaudes',
+        'Massage aux ventouses chaudes',
+        'Massage aux pochons d\'herbes médicinales'
+      ],
+      detailedText: 'Chez Maison Sealiah, le massage est un soin à part entière. Chaque protocole repose sur un savoir-faire précis, nourri par de réelles connaissances anatomiques et inspiré des traditions manuelles asiatiques, allié à un savoir-être subtil, fondé sur l\'écoute, la présence et la qualité du toucher.\n\nAux huiles chaudes, aux ventouses ou aux plantes médicinales, nos massages visent à détendre, rééquilibrer et régénérer en profondeur.\n\nUn moment juste, enveloppant, pensé pour les corps fatigués, en transition ou simplement en quête de mieux-être.'
     }
   ];
 
@@ -74,80 +122,65 @@ export default function Specialites() {
         </motion.div>
 
         <section className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20" aria-label="Nos domaines de spécialité">
-          {/* Kinésithérapie */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
-          >
-            <div className="text-sealiah-amber mb-6 flex justify-center" aria-hidden="true">
-              <Activity className="w-12 h-12" />
-            </div>
-            <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4 text-center">
-              Kinésithérapie
-            </h2>
-            <p className="text-sealiah-amber mb-6">
-              La kinésithérapie vise à traiter les troubles du mouvement et de la fonction à travers des techniques manuelles et des exercices thérapeutiques.
-            </p>
-            <ul className="text-sealiah-amber space-y-2" role="list">
-              <li>• Rééducation post-traumatique</li>
-              <li>• Thérapie manuelle</li>
-              <li>• Rééducation posturale</li>
-              <li>• Drainage lymphatique</li>
-              <li>• Kinésithérapie respiratoire</li>
-            </ul>
-          </motion.div>
+          {specialties.map((specialty, index) => (
+            <motion.div
+              key={specialty.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
+            >
+              <div className="text-sealiah-amber mb-6 flex justify-center" aria-hidden="true">
+                {specialty.icon}
+              </div>
+              <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4 text-center">
+                {specialty.title}
+              </h2>
+              <p className="text-sealiah-amber mb-6">
+                {specialty.description}
+              </p>
+              <ul className="text-sealiah-amber space-y-2 mb-6" role="list">
+                {specialty.services.map((service, serviceIndex) => (
+                  <li key={serviceIndex}>• {service}</li>
+                ))}
+              </ul>
+              
+              {/* Bouton En savoir plus */}
+              <button
+                onClick={() => toggleSpecialty(specialty.id)}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-sealiah-amber/20 text-sealiah-eucalyptus rounded-lg hover:bg-sealiah-amber/30 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2"
+                aria-expanded={expandedSpecialty === specialty.id}
+                aria-controls={`specialty-details-${specialty.id}`}
+              >
+                <span className="font-medium">En savoir plus</span>
+                {expandedSpecialty === specialty.id ? (
+                  <Minus className="w-4 h-4" aria-hidden="true" />
+                ) : (
+                  <Plus className="w-4 h-4" aria-hidden="true" />
+                )}
+              </button>
 
-          {/* Ostéopathie */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
-          >
-            <div className="text-sealiah-amber mb-6 flex justify-center" aria-hidden="true">
-              <Stethoscope className="w-12 h-12" />
-            </div>
-            <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4 text-center">
-              Ostéopathie
-            </h2>
-            <p className="text-sealiah-amber mb-6">
-              L'ostéopathie est une approche thérapeutique manuelle qui vise à restaurer la mobilité des tissus et l'équilibre du corps.
-            </p>
-            <ul className="text-sealiah-amber space-y-2" role="list">
-              <li>• Troubles musculo-squelettiques</li>
-              <li>• Douleurs articulaires</li>
-              <li>• Troubles digestifs</li>
-              <li>• Maux de tête</li>
-              <li>• Stress et tensions</li>
-            </ul>
-          </motion.div>
-
-          {/* Bien-être */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
-          >
-            <div className="text-sealiah-amber mb-6 flex justify-center" aria-hidden="true">
-              <Heart className="w-12 h-12" />
-            </div>
-            <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4 text-center">
-              Bien-être
-            </h2>
-            <p className="text-sealiah-amber mb-6">
-              Nos soins bien-être combinent différentes techniques de massage et de relaxation pour vous offrir un moment de détente profonde.
-            </p>
-            <ul className="text-sealiah-amber space-y-2" role="list">
-              <li>• Massage relaxant</li>
-              <li>• Massage aux pierres chaudes</li>
-              <li>• Réflexologie plantaire</li>
-              <li>• Techniques de relaxation</li>
-              <li>• Conseils en hygiène de vie</li>
-            </ul>
-          </motion.div>
+              {/* Contenu détaillé */}
+              <AnimatePresence>
+                {expandedSpecialty === specialty.id && (
+                  <motion.div
+                    id={`specialty-details-${specialty.id}`}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-6 p-6 bg-sealiah-ivory/50 rounded-lg border border-sealiah-amber/20">
+                      <div className="text-sealiah-amber leading-relaxed whitespace-pre-line">
+                        {specialty.detailedText}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
         </section>
 
         {/* Section de mise en avant des soins */}
@@ -235,29 +268,31 @@ export default function Specialites() {
                   </h3>
                   <div className="flex-shrink-0">
                     {openFAQ === index ? (
-                      <ChevronLeft className="w-5 h-5 text-sealiah-amber transform rotate-90" aria-hidden="true" />
+                      <ChevronDown className="w-5 h-5 text-sealiah-amber" aria-hidden="true" />
                     ) : (
                       <ChevronRight className="w-5 h-5 text-sealiah-amber" aria-hidden="true" />
                     )}
                   </div>
                 </button>
                 
-                <motion.div
-                  id={`faq-answer-${index}`}
-                  initial={false}
-                  animate={{
-                    height: openFAQ === index ? "auto" : 0,
-                    opacity: openFAQ === index ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 pb-4">
-                    <p className="text-sealiah-amber leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </motion.div>
+                <AnimatePresence>
+                  {openFAQ === index && (
+                    <motion.div
+                      id={`faq-answer-${index}`}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-4">
+                        <p className="text-sealiah-amber leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </div>
