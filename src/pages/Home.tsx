@@ -92,10 +92,11 @@ function Home() {
         aria-label="Section d'accueil principale"
         style={isMobile ? { 
           minHeight: 'calc(var(--vh, 1vh) * 100 - 80px)',
-          transform: 'translateZ(0)' 
+          transform: 'translateZ(0)',
+          background: 'linear-gradient(rgba(245, 237, 228, 0.4), rgba(255, 253, 249, 0.4)), url("https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080&q=80") center/cover'
         } : {}}
       >
-        {/* Vidéo désactivée sur mobile pour éviter les problèmes de performance */}
+        {/* Vidéo uniquement sur desktop */}
         {!isMobile && (
           <div className="absolute w-full h-full">
             <video
@@ -114,18 +115,10 @@ function Home() {
           </div>
         )}
         
-        {/* Image de fond statique sur mobile */}
-        {isMobile && (
-          <div 
-            className="absolute w-full h-full bg-cover bg-center opacity-60"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(245, 237, 228, 0.4), rgba(255, 253, 249, 0.4)), url("https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080&q=80")'
-            }}
-            aria-hidden="true"
-          />
+        {/* Overlay gradient uniquement sur desktop (mobile a déjà le gradient dans le background) */}
+        {!isMobile && (
+          <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory/40 to-sealiah-sand/40" aria-hidden="true" />
         )}
-        
-        <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory/40 to-sealiah-sand/40" aria-hidden="true" />
 
         <div className={`relative z-10 text-center px-4 max-w-7xl mx-auto ${isMobile ? 'translate-y-4' : 'translate-y-8'}`}>
           <div className="flex flex-col items-center justify-center space-y-12">
@@ -200,7 +193,7 @@ function Home() {
           >
             <h2 id="presentation-heading" className="sr-only">Présentation de Maison Sealiah</h2>
             <AnimatedText 
-              text="Maison Sealiah cultive une vision subtile de la santé : experte, respectueuse, profondément humaine. Votre bien-être n'est pas une tendance, mais un besoin fondamental. Nous mettons notre savoir-faire au service de ce qui compte vraiment : Vous."
+              text="Bienvenue chez Maison Sealiah, un lieu où l'on cultive une vision subtile de la santé : experte, respectueuse et profondément humaine. Votre bien-être n'est plus une activité ou une mode, il répond à des besoins humains fondamentaux. Chez Maison Sealiah nous mettons notre expertise au service de vos besoins."
               className="text-2xl md:text-3xl lg:text-4xl text-sealiah-amber max-w-4xl mx-auto leading-relaxed"
             />
           </motion.div>
