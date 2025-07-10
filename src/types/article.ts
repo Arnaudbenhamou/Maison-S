@@ -14,7 +14,6 @@ export interface Article {
   category: string;
   tags: string[];
   status: 'draft' | 'published' | 'archived';
-  featured: boolean;
   reading_time: number;
   published_at?: string;
   created_at: string;
@@ -29,7 +28,6 @@ export interface ArticleFilters {
   category?: string;
   tags?: string[];
   status?: string;
-  featured?: boolean;
   author_id?: string;
   search?: string;
 }
@@ -46,7 +44,6 @@ export interface ArticleFormData {
   category: string;
   tags: string[];
   status: 'draft' | 'published' | 'archived';
-  featured: boolean;
   reading_time: number;
   canonical_url?: string;
   og_image?: string;

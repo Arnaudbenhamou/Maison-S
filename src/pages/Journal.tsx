@@ -10,7 +10,6 @@ import type { Article } from '../types/article';
 
 export default function Journal() {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [featuredArticles, setFeaturedArticles] = useState<Article[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [tags, setTags] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
@@ -35,13 +34,11 @@ export default function Journal() {
       
       const [articlesData, featuredData, categoriesData, tagsData] = await Promise.all([
         ArticleService.getPublishedArticles(filters),
-        ArticleService.getFeaturedArticles(3),
         ArticleService.getCategories(),
         ArticleService.getTags(),
       ]);
       
       setArticles(articlesData);
-      setFeaturedArticles(featuredData);
       setCategories(categoriesData);
       setTags(tagsData);
     } catch (error) {
@@ -172,82 +169,16 @@ export default function Journal() {
           </div>
         </motion.div>
 
-        {/* Articles en vedette */}
-        {featuredArticles.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mb-16"
-            aria-labelledby="featured-articles"
-          >
-            <h2 id="featured-articles" className="text-3xl font-serif text-sealiah-eucalyptus mb-8 text-center">
-              Articles en vedette
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {featuredArticles.map((article, index) => (
-                <motion.article
-                  key={article.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <Link to={`/journal/${article.slug}`} className="block">
-                    {article.featured_image && (
-                      <OptimizedImage
-                        src={article.featured_image}
-                        alt={article.featured_image_alt || article.title}
-                        className="w-full h-48 object-cover"
-                        width={400}
-                        height={192}
-                        loading="lazy"
-                      />
-                    )}
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 mb-3 text-sm text-sealiah-amber">
-                        <Calendar className="w-4 h-4" />
-                        <time dateTime={article.published_at}>
-                          {formatDate(article.published_at!)}
-                        </time>
-                        <span>•</span>
-                        <Clock className="w-4 h-4" />
-                        <span>{article.reading_time} min</span>
-                      </div>
-                      <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-3 hover:text-sealiah-amber transition-colors">
-                        {article.title}
-                      </h3>
-                      {article.excerpt && (
-                        <p className="text-sealiah-amber mb-4 line-clamp-3">
-                          {article.excerpt}
-                        </p>
-                      )}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-sm text-sealiah-amber">
-                          <User className="w-4 h-4" />
-                          <span>{article.author_name}</span>
-                        </div>
-                        <span className="text-sm bg-sealiah-amber/20 text-sealiah-amber px-2 py-1 rounded-full">
-                          {article.category}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.article>
-              ))}
-            </div>
-          </motion.section>
-        )}
 
-        {/* Tous les articles */}
+        {/* Articles par ordre chronologique */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
           aria-labelledby="all-articles"
         >
           <h2 id="all-articles" className="text-3xl font-serif text-sealiah-eucalyptus mb-8 text-center">
-            Tous nos articles
+            Nos derniers articles
           </h2>
           
           {loading ? (
@@ -265,7 +196,7 @@ export default function Journal() {
                   key={article.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1 + index * 0.1 }}
+                  transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
                   className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <Link to={`/journal/${article.slug}`} className="block">

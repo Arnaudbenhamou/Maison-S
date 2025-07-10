@@ -59,23 +59,6 @@ export class ArticleService {
   }
 
   // Récupérer les articles en vedette
-  static async getFeaturedArticles(limit: number = 3): Promise<Article[]> {
-    const { data, error } = await supabase
-      .from('articles')
-      .select('*')
-      .eq('status', 'published')
-      .eq('featured', true)
-      .lte('published_at', new Date().toISOString())
-      .order('published_at', { ascending: false })
-      .limit(limit);
-
-    if (error) {
-      console.error('Erreur lors de la récupération des articles en vedette:', error);
-      throw error;
-    }
-
-    return data || [];
-  }
 
   // Récupérer les articles récents
   static async getRecentArticles(limit: number = 5): Promise<Article[]> {
