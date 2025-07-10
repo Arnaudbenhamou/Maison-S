@@ -1,0 +1,26 @@
+# Redirections pour Netlify
+
+# Redirection des anciennes URLs (si applicable)
+/kinesitherapeute-puteaux /praticien/arnaud-benhamou 301
+/osteopathe-puteaux /praticien/arnaud-benhamou 301
+/massage-puteaux /soins 301
+/cabinet-kine-puteaux /notre-cabinet 301
+
+# Redirection des URLs avec trailing slash
+/soins/ /soins 301
+/specialites/ /specialites 301
+/notre-cabinet/ /notre-cabinet 301
+/journal/ /journal 301
+/praticien/arnaud-benhamou/ /praticien/arnaud-benhamou 301
+
+# Gestion des erreurs 404
+/* /index.html 200
+
+# Headers de sécurité et performance
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
