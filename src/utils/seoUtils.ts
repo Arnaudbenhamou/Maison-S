@@ -27,6 +27,37 @@ export const generateStructuredData = (type: string, data: any) => {
   return JSON.stringify(baseStructure, null, 2);
 };
 
+// Génération de données structurées pour les articles
+export const generateArticleStructuredData = (article: any) => {
+  return generateStructuredData('Article', {
+    headline: article.title,
+    description: article.excerpt,
+    image: article.featured_image,
+    author: {
+      '@type': 'Person',
+      name: article.author_name,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Maison Sealiah',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.maisonsealiah.fr/logo.svg',
+      },
+    },
+    datePublished: article.published_at,
+    dateModified: article.updated_at,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': article.canonical_url,
+    },
+    keywords: article.meta_keywords?.join(', '),
+    articleSection: article.category,
+    wordCount: article.content.split(/\s+/).length,
+    timeRequired: `PT${article.reading_time}M`,
+  });
+};
+
 // Validation SEO
 export const validateSEO = (element: HTMLElement) => {
   const issues: string[] = [];

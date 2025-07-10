@@ -414,58 +414,7 @@ function Home() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {[
-              {
-                title: "Les bienfaits de la méditation",
-                date: "15 Mars 2024",
-                excerpt: "Découvrez comment la méditation peut transformer votre quotidien...",
-                image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-                alt: "Personne en méditation dans un environnement paisible et naturel"
-              },
-              {
-                title: "Routine bien-être du matin",
-                date: "12 Mars 2024",
-                excerpt: "5 habitudes simples pour commencer la journée en pleine forme...",
-                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
-                alt: "Routine matinale bien-être avec yoga et méditation au lever du soleil"
-              }
-            ].map((article, index) => (
-              <motion.article
-                key={article.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
-                aria-labelledby={`article-${index}-title`}
-              >
-                <OptimizedImage
-                  src={article.image} 
-                  alt={article.alt}
-                  className="w-full h-64 object-cover"
-                  width={600}
-                  height={256}
-                  loading="lazy"
-                />
-                <div className="p-6">
-                  <time className="text-sealiah-amber mb-2 block" dateTime={article.date}>
-                    {article.date}
-                  </time>
-                  <h3 id={`article-${index}-title`} className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
-                    {article.title}
-                  </h3>
-                  <p className="text-sealiah-amber mb-6">{article.excerpt}</p>
-                  <Link
-                    to="/journal"
-                    className="inline-flex items-center text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1"
-                    aria-label={`Lire l'article complet: ${article.title}`}
-                  >
-                    Lire l'article <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
-                  </Link>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+          <JournalPreview />
         </div>
       </section>
 
@@ -673,5 +622,106 @@ function Home() {
     </div>
   );
 }
+
+// Composant pour afficher les articles récents du journal
+const JournalPreview = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadRecentArticles = async () => {
+      try {
+        const { ArticleService } = await import('../services/articleService');
+        const recentArticles = await ArticleService.getRecentArticles(2);
+        setArticles(recentArticles);
+      } catch (error) {
+        console.error('Erreur lors du chargement des articles:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadRecentArticles();
+  }, []);
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('fr-FR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {[1, 2].map((i) => (
+          <div key={i} className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg animate-pulse">
+            <div className="w-full h-64 bg-gray-200"></div>
+            <div className="p-6">
+              <div className="h-4 bg-gray-200 rounded mb-2"></div>
+              <div className="h-6 bg-gray-200 rounded mb-4"></div>
+              <div className="h-4 bg-gray-200 rounded"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (articles.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-sealiah-amber">Aucun article disponible pour le moment.</p>
+        <Link
+          to="/journal"
+          className="inline-flex items-center text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300 mt-4"
+        >
+          Voir le journal <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {articles.map((article, index) => (
+        <motion.article
+          key={article.id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: index * 0.2 }}
+          className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
+          aria-labelledby={`article-${article.id}-title`}
+        >
+          <Link to={`/journal/${article.slug}`}>
+            {article.featured_image && (
+              <OptimizedImage
+                src={article.featured_image} 
+                alt={article.featured_image_alt || article.title}
+                className="w-full h-64 object-cover"
+                width={600}
+                height={256}
+                loading="lazy"
+              />
+            )}
+            <div className="p-6">
+              <time className="text-sealiah-amber mb-2 block" dateTime={article.published_at}>
+                {formatDate(article.published_at)}
+              </time>
+              <h3 id={`article-${article.id}-title`} className="text-2xl font-serif text-sealiah-eucalyptus mb-4 hover:text-sealiah-amber transition-colors">
+                {article.title}
+              </h3>
+              <p className="text-sealiah-amber mb-6">{article.excerpt}</p>
+              <span className="inline-flex items-center text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300">
+                Lire l'article <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
+              </span>
+            </div>
+          </Link>
+        </motion.article>
+      ))}
+    </div>
+  );
+};
 
 export default Home;

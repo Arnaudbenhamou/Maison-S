@@ -9,6 +9,7 @@ import Soins from './pages/Soins';
 import Specialites from './pages/Specialites.tsx';
 import NotreCabinet from './pages/NotreCabinet';
 import Journal from './pages/Journal';
+import ArticleDetail from './pages/ArticleDetail';
 import Praticien from './pages/Praticien';
 import { useMobileScrollFix } from './utils/mobileScrollFix';
 
@@ -92,6 +93,7 @@ function AnimatedRoutes() {
         <Route path="/specialites" element={<PageWrapper><Specialites /></PageWrapper>} />
         <Route path="/notre-cabinet" element={<PageWrapper><NotreCabinet /></PageWrapper>} />
         <Route path="/journal" element={<PageWrapper><Journal /></PageWrapper>} />
+        <Route path="/journal/:slug" element={<PageWrapper><ArticleDetail /></PageWrapper>} />
         <Route path="/praticien/arnaud-benhamou" element={<PageWrapper><Praticien /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
