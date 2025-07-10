@@ -66,7 +66,14 @@ function Home() {
         <meta property="og:title" content="Maison Sealiah | Centre de kinésithérapie et ostéopathie à Puteaux" />
         <meta property="og:description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/" />
-        <meta property="og:image" content="https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg" />
+        <meta property="og:image" content="https://www.maisonsealiah.fr/images/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Maison Sealiah - Centre de kinésithérapie et ostéopathie à Puteaux" />
+        <meta property="og:site_name" content="Maison Sealiah" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="https://www.maisonsealiah.fr/images/og-image.jpg" />
+        <meta property="twitter:image:alt" content="Maison Sealiah - Centre de kinésithérapie et ostéopathie à Puteaux" />
       </Helmet>
       
       {/* Hero Section */}

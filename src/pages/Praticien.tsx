@@ -18,6 +18,11 @@ function Praticien() {
         <meta property="og:description" content="Masseur-Kinésithérapeute et Ostéopathe à Puteaux, expert en thérapies manuelles et approches holistiques." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/praticien/arnaud-benhamou" />
         <meta property="og:image" content="https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
+        <meta property="og:image:alt" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto">
