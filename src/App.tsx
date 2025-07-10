@@ -11,21 +11,46 @@ import NotreCabinet from './pages/NotreCabinet';
 import Journal from './pages/Journal';
 import Praticien from './pages/Praticien';
 
+// Hook pour détecter si on est sur mobile
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  return isMobile;
+};
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Scroll plus doux sur mobile
+    if (window.innerWidth < 768) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }, [pathname]);
 
   return null;
 };
 
 const PageWrapper = ({ children }) => {
+  const isMobile = useIsMobile();
+  
+  // Animations réduites sur mobile pour éviter les conflits de scroll
   const variants = {
     initial: {
       opacity: 0,
-      y: 20
+      y: isMobile ? 10 : 20
     },
     animate: {
       opacity: 1,
@@ -33,7 +58,7 @@ const PageWrapper = ({ children }) => {
     },
     exit: {
       opacity: 0,
-      y: -20
+      y: isMobile ? -10 : -20
     }
   };
 
@@ -46,7 +71,7 @@ const PageWrapper = ({ children }) => {
       transition={{
         type: "tween",
         ease: "easeInOut",
-        duration: 0.5
+        duration: isMobile ? 0.2 : 0.5
       }}
     >
       {children}
@@ -56,9 +81,10 @@ const PageWrapper = ({ children }) => {
 
 function AnimatedRoutes() {
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode={isMobile ? "sync" : "wait"}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
         <Route path="/soins" element={<PageWrapper><Soins /></PageWrapper>} />

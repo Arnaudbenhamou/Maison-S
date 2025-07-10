@@ -25,6 +25,17 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Convert image URLs to WebP format when possible
   const getOptimizedSrc = (originalSrc: string) => {
@@ -32,7 +43,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       // Add WebP format and optimize size for Unsplash images
       const url = new URL(originalSrc);
       url.searchParams.set('fm', 'webp');
-      url.searchParams.set('q', '80');
+      // Qualité réduite sur mobile pour améliorer les performances
+      url.searchParams.set('q', isMobile ? '70' : '80');
       if (width) url.searchParams.set('w', width.toString());
       if (height) url.searchParams.set('h', height.toString());
       return url.toString();
@@ -80,6 +92,11 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         onLoad={handleLoad}
         onError={handleError}
         decoding="async"
+        // Optimisations mobile
+        style={isMobile ? { 
+          imageRendering: 'auto',
+          transform: 'translateZ(0)', // Force hardware acceleration
+        } : {}}
         role={role}
         aria-describedby={ariaDescribedBy}
       />
