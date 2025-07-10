@@ -32,7 +32,6 @@ export default function Journal() {
         search: searchTerm || undefined,
       };
       
-      const [articlesData, featuredData, categoriesData, tagsData] = await Promise.all([
       const [articlesData, categoriesData, tagsData] = await Promise.all([
         ArticleService.getPublishedArticles(filters),
         ArticleService.getCategories(),
