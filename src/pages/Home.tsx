@@ -248,61 +248,85 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 id="soins-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Nos Soins Signatures</h2>
-            <p className="text-xl text-sealiah-amber max-w-3xl mx-auto">
-              Un parcours de soins complet pour des bienfaits profonds et durables
-            </p>
+            <h2 id="soins-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Nos Soins Signatures : Les Combos Sealiah</h2>
+            <div className="text-xl text-sealiah-amber max-w-4xl mx-auto space-y-4">
+              <p>Un voyage de soins en plusieurs temps.</p>
+              <p>Pensés comme des rituels thérapeutiques complets, les Combos Sealiah associent plusieurs pratiques manuelles au sein d'un même rendez-vous pour renforcer leur synergie.</p>
+              <p>À la croisée de la thérapie et du bien-être, nos Combos Sealiah sont des parcours de soins <strong>EXCLUSIFS</strong> et <strong>PERSONNALISABLES</strong>, pensés pour vous offrir des bienfaits profonds et durables.</p>
+            </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
               {
-                title: "Massages Signature",
-                description: "Une fusion unique de techniques ancestrales et modernes",
-                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-                alt: "Séance de massage relaxant avec huiles essentielles dans un environnement zen et apaisant"
+                title: "Ostéopathie + Massage corps entier aux huiles chaudes",
+                subtitle: "Apaisement profond & rééquilibrage.",
+                description: "• Ostéopathie ciblée : libération des tensions mécaniques et restauration de la mobilité articulaire.\n• Massage enveloppant à l'huile chaude : détente profonde des tissus, apaisement du système nerveux et intégration du travail ostéopathique.",
+                indication: "Indications : idéal en cas de surcharge mentale, douleurs chroniques ou besoin de régulation profonde.",
+                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                alt: "Massage corps entier aux huiles chaudes dans un environnement zen et apaisant"
               },
               {
-                title: "Les Combos Sealiah",
-                description: "Une expérience de soin personnalisée et complète",
-                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-                alt: "Espace de soins holistiques combinant différentes techniques thérapeutiques"
+                title: "Ostéopathie + Massage corps entier aux pochons d'herbes médicinales",
+                subtitle: "Soin rituel & chaleur médicinale",
+                description: "• Ostéopathie ciblée\n• Massage aux pochons d'herbes chaudes : diffusion des vertus des plantes médicinales par la chaleur et la vapeur, pour détendre les muscles en profondeur et favoriser l'élimination des tensions.",
+                indication: "Indications : idéal pour les corps fatigués, les douleurs diffuses ou les périodes de transition.",
+                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                alt: "Massage aux pochons d'herbes médicinales chaudes avec vapeur thérapeutique"
               },
               {
-                title: "Soins Énergétiques",
-                description: "Harmonisation corps et esprit",
-                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
-                alt: "Séance de soin énergétique avec bols tibétains pour l'harmonisation des chakras"
+                title: "Ostéopathie + Massage Corps Entier aux ventouses chaudes",
+                subtitle: "Libération tissulaire & circulation renforcée",
+                description: "• Ostéopathie ciblée\n• Massage combiné aux ventouses chaudes : alternance de gestes manuels et d'application de ventouses pour stimuler la circulation sanguine et lymphatique, libérer les fascias et soulager les stagnations.",
+                indication: "Indications : idéal pour les douleurs musculaires, la récupération physique ou les sensations de lourdeur corporelle.",
+                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                alt: "Massage thérapeutique avec ventouses chaudes pour stimuler la circulation"
+              },
+              {
+                title: "Pour Celle Qui Donne la Vie : Soin postnatal enveloppant & régénérant",
+                subtitle: "",
+                description: "• Ostéopathie postnatale ciblée : adaptée aux suites de l'accouchement, pour libérer les tensions et soutenir la récupération corporelle.\n• Massage du corps entier à l'huile chaude : profondément relaxant, il apaise le système nerveux et relâche les tissus.\n• Rituel de resserrage du bassin : inspiré des traditions balinaises, il favorise le recentrage du bassin, la détente et le soutien tissulaire.",
+                indication: "Idéal pour : offrir aux jeunes mamans un véritable temps de régénération physique, émotionnelle et énergétique, dans une bulle de douceur et de force retrouvée.",
+                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                alt: "Soin postnatal enveloppant pour jeunes mamans avec massage relaxant"
               }
-            ].map((soin, index) => (
+            ].map((combo, index) => (
               <motion.div
-                key={soin.title}
+                key={combo.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
                 role="article"
-                aria-labelledby={`soin-${index}-title`}
+                aria-labelledby={`combo-${index}-title`}
               >
                 <OptimizedImage
-                  src={soin.image} 
-                  alt={soin.alt}
-                  className="w-full h-48 object-cover"
-                  width={400}
-                  height={192}
+                  src={combo.image} 
+                  alt={combo.alt}
+                  className="w-full h-64 object-cover"
+                  width={600}
+                  height={256}
                   loading="lazy"
                 />
                 <div className="p-6">
-                  <h3 id={`soin-${index}-title`} className="text-xl font-serif text-sealiah-eucalyptus mb-4">
-                    {soin.title}
+                  <h3 id={`combo-${index}-title`} className="text-xl font-serif text-sealiah-eucalyptus mb-2">
+                    {combo.title}
                   </h3>
-                  <p className="text-sealiah-amber mb-6">
-                    {soin.description}
+                  {combo.subtitle && (
+                    <p className="text-lg font-medium text-sealiah-amber mb-4">
+                      {combo.subtitle}
+                    </p>
+                  )}
+                  <div className="text-sealiah-amber mb-4 whitespace-pre-line">
+                    {combo.description}
+                  </div>
+                  <p className="text-sm text-sealiah-eucalyptus mb-6 italic">
+                    {combo.indication}
                   </p>
                   <Link
-                    to="/soins"
+                    to="/journal/les-combos-sealiah"
                     className="text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1"
-                    aria-label={`En savoir plus sur ${soin.title}`}
+                    aria-label={`En savoir plus sur ${combo.title}`}
                   >
                     En savoir plus
                   </Link>
@@ -319,7 +343,7 @@ function Home() {
               className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
               aria-label="Découvrir et réserver les Combos Sealiah sur Doctolib - Ouvre dans un nouvel onglet"
             >
-              Les Combos Sealiah
+              Réserver mon Combo Sealiah
             </AccessibleButton>
           </div>
         </div>
