@@ -259,7 +259,7 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
               {
-                title: "Ostéopathie + Massage corps entier aux huiles chaudes",
+                title: "Ostéopathie & Massage corps entier aux huiles chaudes",
                 subtitle: "Apaisement profond & rééquilibrage.",
                 description: "• Ostéopathie ciblée : libération des tensions mécaniques et restauration de la mobilité articulaire.\n• Massage enveloppant à l'huile chaude : détente profonde des tissus, apaisement du système nerveux et intégration du travail ostéopathique.",
                 indication: "Indications : idéal en cas de surcharge mentale, douleurs chroniques ou besoin de régulation profonde.",
@@ -267,7 +267,7 @@ function Home() {
                 alt: "Massage corps entier aux huiles chaudes dans un environnement zen et apaisant"
               },
               {
-                title: "Ostéopathie + Massage corps entier aux pochons d'herbes médicinales",
+                title: "Ostéopathie & Massage corps entier aux pochons d'herbes médicinales",
                 subtitle: "Soin rituel & chaleur médicinale",
                 description: "• Ostéopathie ciblée\n• Massage aux pochons d'herbes chaudes : diffusion des vertus des plantes médicinales par la chaleur et la vapeur, pour détendre les muscles en profondeur et favoriser l'élimination des tensions.",
                 indication: "Indications : idéal pour les corps fatigués, les douleurs diffuses ou les périodes de transition.",
@@ -275,7 +275,7 @@ function Home() {
                 alt: "Massage aux pochons d'herbes médicinales chaudes avec vapeur thérapeutique"
               },
               {
-                title: "Ostéopathie + Massage Corps Entier aux ventouses chaudes",
+                title: "Ostéopathie & Massage Corps Entier aux ventouses chaudes",
                 subtitle: "Libération tissulaire & circulation renforcée",
                 description: "• Ostéopathie ciblée\n• Massage combiné aux ventouses chaudes : alternance de gestes manuels et d'application de ventouses pour stimuler la circulation sanguine et lymphatique, libérer les fascias et soulager les stagnations.",
                 indication: "Indications : idéal pour les douleurs musculaires, la récupération physique ou les sensations de lourdeur corporelle.",
