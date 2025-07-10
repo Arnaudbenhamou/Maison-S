@@ -70,21 +70,20 @@ function Home() {
   return (
     <div className="relative">
       <Helmet>
-        <title>Maison Sealiah | Centre de kinésithérapie et ostéopathie à Puteaux</title>
-        <meta name="description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique par Arnaud Benhamou. Prenez RDV sur Doctolib." />
+        <title>Maison Sealiah | Centre de Santé - Kinésithérapie et Ostéopathie</title>
+        <meta name="description" content="Maison Sealiah - Un lieu de soin pensé pour conjuguer rigueur thérapeutique, accompagnement global et expérience sensorielle. Prenez RDV sur Doctolib." />
         <meta name="keywords" content="kinésithérapie, ostéopathie, massage, Puteaux, Arnaud Benhamou, bien-être, rééducation, thérapie manuelle, Doctolib" />
         <link rel="canonical" href="https://www.maisonsealiah.fr/" />
-        <meta property="og:title" content="Maison Sealiah | Centre de kinésithérapie et ostéopathie à Puteaux" />
-        <meta property="og:description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique." />
+        <meta property="og:title" content="Maison Sealiah | Centre de Santé - Kinésithérapie et Ostéopathie" />
+        <meta property="og:description" content="Maison Sealiah - Un lieu de soin pensé pour conjuguer rigueur thérapeutique, accompagnement global et expérience sensorielle." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/" />
         <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Maison Sealiah - Centre de kinésithérapie et ostéopathie à Puteaux" />
         <meta property="og:site_name" content="Maison Sealiah" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image.jpg" />
-        <meta property="twitter:image:alt" content="Maison Sealiah - Centre de kinésithérapie et ostéopathie à Puteaux" />
+        <meta property="twitter:title" content="Maison Sealiah | Centre de Santé - Kinésithérapie et Ostéopathie" />
+        <meta property="twitter:description" content="Maison Sealiah - Un lieu de soin pensé pour conjuguer rigueur thérapeutique, accompagnement global et expérience sensorielle." />
       </Helmet>
       
       {/* Hero Section */}
