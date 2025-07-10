@@ -35,7 +35,7 @@ function Praticien() {
         >
           <div className="mb-8">
             <OptimizedImage
-              src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Maison-Sealiah-prevenir-soigner-apaiser.png"
+              src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//arnaud-benhamou.jpg"
               alt="Logo Maison Sealiah - Prévenir, Soigner, Apaiser"
               className="w-48 h-48 rounded-full mx-auto object-cover mb-6"
               width={192}
