@@ -34,7 +34,13 @@ const pages = [
     lastmod: new Date().toISOString().split('T')[0]
   },
   {
-    url: '/praticien/arnaud-benhamou',
+    url: '/notre-equipe',
+    changefreq: 'monthly',
+    priority: '0.8',
+    lastmod: new Date().toISOString().split('T')[0]
+  },
+  {
+    url: '/praticien-kinesitherapeute-osteopathe-puteaux',
     changefreq: 'monthly',
     priority: '0.8',
     lastmod: new Date().toISOString().split('T')[0]
@@ -84,8 +90,9 @@ Allow: /
 Allow: /soins
 Allow: /specialites
 Allow: /notre-cabinet
+Allow: /notre-equipe
 Allow: /journal
-Allow: /praticien/arnaud-benhamou`;
+Allow: /praticien-kinesitherapeute-osteopathe-puteaux`;
 
   const robotsPath = path.join(__dirname, '../dist/robots.txt');
   fs.writeFileSync(robotsPath, robots);

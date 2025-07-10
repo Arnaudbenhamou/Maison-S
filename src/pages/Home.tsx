@@ -378,7 +378,7 @@ function Home() {
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <Link 
-                to="/praticien/arnaud-benhamou" 
+                to="/praticien-kinesitherapeute-osteopathe-puteaux" 
                 className="block focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded-lg"
                 aria-label="En savoir plus sur Arnaud Benhamou, Masseur-Kinésithérapeute Ostéopathe"
               >

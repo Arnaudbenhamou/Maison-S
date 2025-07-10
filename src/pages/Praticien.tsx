@@ -11,17 +11,17 @@ function Praticien() {
   return (
     <div className="min-h-screen py-20 px-6" role="main">
       <Helmet>
-        <title>Arnaud Benhamou - Kinésithérapeute Ostéopathe | Maison Sealiah</title>
-        <meta name="description" content="Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe à Puteaux. Fondateur de Maison Sealiah, expert en thérapies manuelles et approches holistiques." />
-        <meta name="keywords" content="Arnaud Benhamou, kinésithérapeute, ostéopathe, Puteaux, thérapie manuelle, massage, rééducation, Doctolib" />
-        <link rel="canonical" href="https://www.maisonsealiah.fr/praticien/arnaud-benhamou" />
-        <meta property="og:title" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe | Maison Sealiah" />
-        <meta property="og:description" content="Masseur-Kinésithérapeute et Ostéopathe à Puteaux, expert en thérapies manuelles et approches holistiques." />
-        <meta property="og:url" content="https://www.maisonsealiah.fr/praticien/arnaud-benhamou" />
+        <title>Kinésithérapeute Ostéopathe Puteaux - Arnaud Benhamou | Maison Sealiah</title>
+        <meta name="description" content="Arnaud Benhamou, Kinésithérapeute Ostéopathe à Puteaux. Expert en thérapies manuelles, massages thérapeutiques et approches holistiques. Prenez RDV sur Doctolib." />
+        <meta name="keywords" content="kinésithérapeute Puteaux, ostéopathe Puteaux, Arnaud Benhamou, thérapie manuelle, massage thérapeutique, rééducation, Doctolib, 92800" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/praticien-kinesitherapeute-osteopathe-puteaux" />
+        <meta property="og:title" content="Kinésithérapeute Ostéopathe Puteaux - Arnaud Benhamou | Maison Sealiah" />
+        <meta property="og:description" content="Kinésithérapeute Ostéopathe expert à Puteaux. Thérapies manuelles et approches holistiques par Arnaud Benhamou." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/praticien-kinesitherapeute-osteopathe-puteaux" />
         <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="800" />
-        <meta property="og:image:alt" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe" />
+        <meta property="og:image:alt" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe Puteaux" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" />
       </Helmet>

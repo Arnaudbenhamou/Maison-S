@@ -23,7 +23,7 @@ const InternalLinks: React.FC<InternalLinksProps> = ({ className = '' }) => {
       description: 'Équipements modernes et espace de 200m²'
     },
     {
-      to: '/praticien/arnaud-benhamou',
+      to: '/praticien-kinesitherapeute-osteopathe-puteaux',
       text: 'Rencontrez Arnaud Benhamou',
       description: 'Masseur-Kinésithérapeute et Ostéopathe expert'
     },

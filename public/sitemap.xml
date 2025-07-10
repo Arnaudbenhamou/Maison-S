@@ -53,7 +53,20 @@
   
   <!-- Page Praticien -->
   <url>
-    <loc>https://www.maisonsealiah.fr/praticien/arnaud-benhamou</loc>
+    <loc>https://www.maisonsealiah.fr/notre-equipe</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg</image:loc>
+      <image:title>Arnaud Benhamou - Masseur-Kinésithérapeute Ostéopathe</image:title>
+      <image:caption>Portrait professionnel d'Arnaud Benhamou, fondateur de Maison Sealiah</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Page Praticien SEO -->
+  <url>
+    <loc>https://www.maisonsealiah.fr/praticien-kinesitherapeute-osteopathe-puteaux</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

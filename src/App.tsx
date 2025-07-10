@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { Navigate } from 'react-router-dom';
 import SkipLink from './components/SkipLink';
 import SEOMonitoring from './components/SEOMonitoring';
 import Home from './pages/Home';
@@ -95,7 +96,10 @@ function AnimatedRoutes() {
         <Route path="/notre-cabinet" element={<PageWrapper><NotreCabinet /></PageWrapper>} />
         <Route path="/journal" element={<PageWrapper><Journal /></PageWrapper>} />
         <Route path="/journal/:slug" element={<PageWrapper><ArticleDetail /></PageWrapper>} />
-        <Route path="/praticien/arnaud-benhamou" element={<PageWrapper><Praticien /></PageWrapper>} />
+        <Route path="/notre-equipe" element={<PageWrapper><Praticien /></PageWrapper>} />
+        <Route path="/praticien-kinesitherapeute-osteopathe-puteaux" element={<PageWrapper><Praticien /></PageWrapper>} />
+        {/* Redirection de l'ancienne URL vers la nouvelle */}
+        <Route path="/praticien/arnaud-benhamou" element={<Navigate to="/praticien-kinesitherapeute-osteopathe-puteaux" replace />} />
         <Route path="/offrir" element={<PageWrapper><Offrir /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
@@ -114,6 +118,7 @@ function App() {
     { path: '/specialites', label: 'Nos Spécialités' },
     { path: '/soins', label: 'Soins' },
     { path: '/notre-cabinet', label: 'Le lieu' },
+    { path: '/notre-equipe', label: 'Notre Équipe' },
     { path: '/journal', label: 'Journal' },
     { path: '/offrir', label: 'Offrir' }
   ];
