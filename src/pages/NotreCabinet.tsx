@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Phone, Users, Dumbbell, Heart } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function NotreCabinet() {
   return (
@@ -29,10 +30,13 @@ export default function NotreCabinet() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <img
-                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              <OptimizedImage
+                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
                 alt="Accueil du cabinet"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
+                width={600}
+                height={384}
+                loading="lazy"
               />
             </div>
             <div className="flex flex-col justify-center">
@@ -81,17 +85,17 @@ export default function NotreCabinet() {
               {
                 title: "Salle de Kinésithérapie",
                 description: "Équipée de tables électriques et de matériel spécialisé pour les soins thérapeutiques.",
-                image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
               },
               {
                 title: "Espace Bien-être",
                 description: "Un cadre apaisant pour les massages et soins relaxants.",
-                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
               },
               {
                 title: "Salle de Consultation",
                 description: "Pour les bilans et suivis personnalisés dans un cadre confidentiel.",
-                image: "https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
               }
             ].map((room, index) => (
               <motion.div
@@ -101,10 +105,13 @@ export default function NotreCabinet() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
               >
-                <img
+                <OptimizedImage
                   src={room.image}
                   alt={room.title}
                   className="w-full h-48 object-cover"
+                  width={400}
+                  height={192}
+                  loading="lazy"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-4">
@@ -132,10 +139,13 @@ export default function NotreCabinet() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <img
-                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                <OptimizedImage
+                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
                   alt="Plateau technique"
                   className="w-full h-96 object-cover rounded-lg shadow-lg"
+                  width={600}
+                  height={384}
+                  loading="lazy"
                 />
               </div>
               <div className="flex flex-col justify-center">

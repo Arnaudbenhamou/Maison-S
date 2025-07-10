@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Heart, Stethoscope, MessageSquare, Star, Users, Sparkles, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedText from '../components/AnimatedText';
+import OptimizedImage from '../components/OptimizedImage';
 
 function Home() {
   const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret";
@@ -56,15 +57,19 @@ function Home() {
     <div className="relative">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-10">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute w-full h-full object-cover opacity-60"
-        >
-          <source src="https://player.vimeo.com/external/517090081.hd.mp4?s=b0c347f69c0797f5aa24c6df0b3c8ccf4e2f8a2c&profile_id=175" type="video/mp4" />
-        </video>
+        <div className="absolute w-full h-full">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover opacity-60"
+            poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23F5EDE4'/%3E%3C/svg%3E"
+          >
+            <source src="https://player.vimeo.com/external/517090081.hd.mp4?s=b0c347f69c0797f5aa24c6df0b3c8ccf4e2f8a2c&profile_id=175" type="video/mp4" />
+          </video>
+        </div>
         
         <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory/40 to-sealiah-sand/40" />
 
@@ -77,10 +82,14 @@ function Home() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
             >
-              <img 
+              <OptimizedImage 
                 src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Maison-Sealiah-prevenir-soigner-apaiser.png" 
                 alt="Maison Sealiah" 
                 className="w-full h-auto"
+                priority={true}
+                loading="eager"
+                width={700}
+                height={400}
               />
             </motion.div>
 
@@ -226,10 +235,13 @@ function Home() {
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <Link to="/praticien/arnaud-benhamou" className="block">
-                <img
+                <OptimizedImage
                   src="/images/arnaud-benhamou.jpg"
                   alt="Arnaud Benhamou"
                   className="w-40 h-40 rounded-full mx-auto mb-6 object-cover hover:scale-105 transition-transform duration-300"
+                  width={160}
+                  height={160}
+                  loading="lazy"
                 />
                 <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-2">Arnaud Benhamou</h3>
                 <p className="text-sealiah-amber font-semibold mb-4">Masseur-Kinésithérapeute Ostéopathe</p>
@@ -260,17 +272,17 @@ function Home() {
               {
                 title: "Massages Signature",
                 description: "Une fusion unique de techniques ancestrales et modernes",
-                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
               },
               {
                 title: "Les Combos Sealiah",
                 description: "Une expérience de soin personnalisée et complète",
-                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
               },
               {
                 title: "Soins Énergétiques",
                 description: "Harmonisation corps et esprit",
-                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
               }
             ].map((soin, index) => (
               <motion.div
@@ -280,10 +292,13 @@ function Home() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
               >
-                <img
+                <OptimizedImage
                   src={soin.image}
                   alt={soin.title}
                   className="w-full h-48 object-cover"
+                  width={400}
+                  height={192}
+                  loading="lazy"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-4">
@@ -338,13 +353,13 @@ function Home() {
                 title: "Les bienfaits de la méditation",
                 date: "15 Mars 2024",
                 excerpt: "Découvrez comment la méditation peut transformer votre quotidien...",
-                image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
               },
               {
                 title: "Routine bien-être du matin",
                 date: "12 Mars 2024",
                 excerpt: "5 habitudes simples pour commencer la journée en pleine forme...",
-                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
               }
             ].map((article, index) => (
               <motion.article
@@ -354,10 +369,13 @@ function Home() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
               >
-                <img
+                <OptimizedImage
                   src={article.image}
                   alt={article.title}
                   className="w-full h-64 object-cover"
+                  width={600}
+                  height={256}
+                  loading="lazy"
                 />
                 <div className="p-6">
                   <p className="text-sealiah-amber mb-2">{article.date}</p>
@@ -411,10 +429,13 @@ function Home() {
                   </span>
                 </div>
                 <div className="flex items-center mb-2">
-                  <img
+                  <OptimizedImage
                     src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
                     alt="Google Logo"
                     className="h-6 object-contain"
+                    width={92}
+                    height={30}
+                    loading="lazy"
                   />
                   <div className="flex ml-2">
                     {[...Array(5)].map((_, i) => (

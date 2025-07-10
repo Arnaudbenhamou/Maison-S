@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Globe } from 'lucide-react';
+import OptimizedImage from '../components/OptimizedImage';
 
 function Praticien() {
   const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret/booking?bookingFunnelSource=profile";
@@ -15,10 +16,13 @@ function Praticien() {
           className="text-center mb-16"
         >
           <div className="mb-8">
-            <img
+            <OptimizedImage
               src="/images/arnaud-benhamou.jpg"
               alt="Arnaud Benhamou"
               className="w-48 h-48 rounded-full mx-auto object-cover mb-6"
+              width={192}
+              height={192}
+              loading="lazy"
             />
             <h1 className="text-4xl md:text-5xl font-serif text-sealiah-eucalyptus mb-4">
               Arnaud Benhamou

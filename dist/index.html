@@ -3,6 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="preload" href="/fonts/montserrat-v26-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/cormorant-garamond-v16-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      /* Critical CSS inline */
+      html{font-family:'Montserrat',sans-serif;scroll-behavior:smooth}
+      body{margin:0;line-height:inherit}
+      h1,h2,h3,h4,h5,h6{font-family:'Cormorant Garamond',serif}
+      .fixed{position:fixed}
+      .w-full{width:100%}
+      .top-0{top:0}
+      .z-50{z-index:50}
+      .min-h-screen{min-height:100vh}
+      .relative{position:relative}
+      .flex{display:flex}
+      .items-center{align-items:center}
+      .justify-center{justify-content:center}
+      .overflow-hidden{overflow:hidden}
+      .absolute{position:absolute}
+      .inset-0{top:0;right:0;bottom:0;left:0}
+      .object-cover{-o-object-fit:cover;object-fit:cover}
+      .opacity-60{opacity:.6}
+      .z-10{z-index:10}
+      .text-center{text-align:center}
+      .px-4{padding-left:1rem;padding-right:1rem}
+      .max-w-7xl{max-width:80rem}
+      .mx-auto{margin-left:auto;margin-right:auto}
+      .flex-col{flex-direction:column}
+      .w-\[90vw\]{width:90vw}
+      .h-auto{height:auto}
+      .text-2xl{font-size:1.5rem;line-height:2rem}
+      .font-serif{font-family:'Cormorant Garamond',serif}
+      .leading-relaxed{line-height:1.625}
+      .max-w-4xl{max-width:56rem}
+      .text-xl{font-size:1.25rem;line-height:1.75rem}
+      .mt-8{margin-top:2rem}
+      .rounded-full{border-radius:9999px}
+      .inline-block{display:inline-block}
+      .px-8{padding-left:2rem;padding-right:2rem}
+      .py-3{padding-top:.75rem;padding-bottom:.75rem}
+      .transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+      .duration-300{transition-duration:.3s}
+      .transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+      @media (min-width:640px){.sm\:w-\[500px\]{width:500px}}
+      @media (min-width:768px){.md\:w-\[600px\]{width:600px}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}}
+      @media (min-width:1024px){.lg\:w-\[700px\]{width:700px}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Maison Sealiah - L'excellence du soin, fusionnant luxe, spa, thérapie manuelle et art de vivre inspiré de la nature." />
     <meta name="author" content="Maison Sealiah" />
@@ -14,9 +60,16 @@
     <meta name="twitter:title" content="Maison Sealiah | L'excellence du soin" />
     <meta name="twitter:description" content="L'excellence du soin, fusionnant luxe, spa, thérapie manuelle et art de vivre inspiré de la nature." />
     <meta name="twitter:image" content="/logo.svg" />
+    <link rel="dns-prefetch" href="//images.unsplash.com">
+    <link rel="dns-prefetch" href="//player.vimeo.com">
+    <link rel="dns-prefetch" href="//eniofgrvwufhyeumeetp.supabase.co">
     <title>Maison Sealiah | L'excellence du soin</title>
-    <script type="module" crossorigin src="/assets/index-Da5QXN0s.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-xXVZ-M82.css">
+    <script type="module" crossorigin src="/assets/index-BKAhkWYG.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-DM_ejLFS.js">
+    <link rel="modulepreload" crossorigin href="/assets/motion-C9IEYxhM.js">
+    <link rel="modulepreload" crossorigin href="/assets/router-CSOvxMwC.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-f5qev8QI.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DbfLnAKF.css">
   </head>
   <body>
     <div id="root"></div>

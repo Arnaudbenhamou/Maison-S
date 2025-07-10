@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function Journal() {
   return (
@@ -26,10 +27,13 @@ export default function Journal() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
           >
-            <img
-              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            <OptimizedImage
+              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
               alt="Méditation guidée"
               className="w-full h-64 object-cover rounded-lg mb-6"
+              width={600}
+              height={256}
+              loading="lazy"
             />
             <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
               L'Art de la Méditation au Quotidien
@@ -51,10 +55,13 @@ export default function Journal() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
           >
-            <img
-              src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+            <OptimizedImage
+              src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
               alt="Routine bien-être"
               className="w-full h-64 object-cover rounded-lg mb-6"
+              width={600}
+              height={256}
+              loading="lazy"
             />
             <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
               5 Rituels du Matin pour une Journée Équilibrée
