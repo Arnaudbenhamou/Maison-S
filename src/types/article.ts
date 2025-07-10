@@ -19,8 +19,6 @@ export interface Article {
   published_at?: string;
   created_at: string;
   updated_at: string;
-  views_count: number;
-  likes_count: number;
   canonical_url?: string;
   og_image?: string;
   twitter_image?: string;

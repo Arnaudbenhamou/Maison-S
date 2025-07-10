@@ -55,9 +55,6 @@ export class ArticleService {
       throw error;
     }
 
-    // Incrémenter le compteur de vues
-    await this.incrementViews(data.id);
-
     return data;
   }
 
@@ -138,31 +135,6 @@ export class ArticleService {
     }
 
     return data || [];
-  }
-
-  // Incrémenter le nombre de vues
-  static async incrementViews(articleId: string): Promise<void> {
-    const { error } = await supabase
-      .from('articles')
-      .update({ views_count: supabase.sql`views_count + 1` })
-      .eq('id', articleId);
-
-    if (error) {
-      console.error('Erreur lors de l\'incrémentation des vues:', error);
-    }
-  }
-
-  // Incrémenter le nombre de likes
-  static async incrementLikes(articleId: string): Promise<void> {
-    const { error } = await supabase
-      .from('articles')
-      .update({ likes_count: supabase.sql`likes_count + 1` })
-      .eq('id', articleId);
-
-    if (error) {
-      console.error('Erreur lors de l\'incrémentation des likes:', error);
-      throw error;
-    }
   }
 
   // Récupérer toutes les catégories

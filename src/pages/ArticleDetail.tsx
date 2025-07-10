@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Calendar, Clock, User, Tag, ArrowLeft, Heart, Eye, Share2 } from 'lucide-react';
+import { Calendar, Clock, User, Tag, ArrowLeft, Share2 } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 import { ArticleService } from '../services/articleService';
 import type { Article } from '../types/article';
@@ -13,7 +13,6 @@ export default function ArticleDetail() {
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
-  const [liked, setLiked] = useState(false);
 
   useEffect(() => {
     if (slug) {
@@ -42,18 +41,6 @@ export default function ArticleDetail() {
       setNotFound(true);
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleLike = async () => {
-    if (!article || liked) return;
-    
-    try {
-      await ArticleService.incrementLikes(article.id);
-      setLiked(true);
-      setArticle(prev => prev ? { ...prev, likes_count: prev.likes_count + 1 } : null);
-    } catch (error) {
-      console.error('Erreur lors du like:', error);
     }
   };
 
@@ -226,10 +213,6 @@ export default function ArticleDetail() {
               <Clock className="w-5 h-5" />
               <span>{article.reading_time} min de lecture</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Eye className="w-5 h-5" />
-              <span>{article.views_count} vues</span>
-            </div>
           </div>
         </motion.header>
 
@@ -272,20 +255,7 @@ export default function ArticleDetail() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex items-center justify-between bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg mb-12"
         >
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handleLike}
-              disabled={liked}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                liked
-                  ? 'bg-red-100 text-red-600 cursor-not-allowed'
-                  : 'bg-sealiah-amber/20 text-sealiah-amber hover:bg-sealiah-amber/30'
-              }`}
-            >
-              <Heart className={`w-5 h-5 ${liked ? 'fill-current' : ''}`} />
-              <span>{article.likes_count} {liked ? 'Merci !' : 'J\'aime'}</span>
-            </button>
-            
+          <div className="flex items-center">
             <button
               onClick={handleShare}
               className="flex items-center gap-2 px-4 py-2 bg-sealiah-eucalyptus/20 text-sealiah-eucalyptus rounded-lg hover:bg-sealiah-eucalyptus/30 transition-colors"
