@@ -598,7 +598,7 @@ function Home() {
               <p>
                 <span className="sr-only">Téléphone : </span>
                 <a href="tel:+33603736838" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">
-                  06.03.73.68.38
+                  01.40.85.00.22
                 </a>
               </p>
               <p>
