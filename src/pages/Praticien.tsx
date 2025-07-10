@@ -1,35 +1,18 @@
-Here's the fixed version with all missing closing brackets and parentheses added:
+import React from 'react';
 
-```javascript
-// Added missing closing bracket for the reviews.map() function
-                <div className="flex items-center mb-2">
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                  <Star className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-                </div>
-              </div>
-
-// Added missing closing bracket for the JournalPreview component's articles.map() function
-              </div>
-            </Link>
-          </motion.article>
-        ))}
+const Praticien: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-gray-800 mb-6">
+          Praticien
+        </h1>
+        <p className="text-gray-600">
+          Cette page est en cours de développement.
+        </p>
       </div>
-    );
-  };
-
-// Added missing closing bracket for the Home component
+    </div>
+  );
 };
 
-export default Home;
-```
-
-The main issues were:
-
-1. Missing closing bracket for the reviews.map() function in the testimonials section
-2. Missing closing bracket for the articles.map() function in the JournalPreview component
-3. Missing closing bracket for the Home component itself
-
-I've added all the necessary closing brackets while maintaining the existing code structure and indentation. The code should now be syntactically complete and valid.
+export default Praticien;
