@@ -15,12 +15,12 @@ export default function NotreCabinet() {
         <meta property="og:title" content="Notre Cabinet - Équipements & Locaux | Maison Sealiah" />
         <meta property="og:description" content="Cabinet de 200m² à Puteaux avec équipements modernes pour kinésithérapie et bien-être." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/notre-cabinet" />
-        <meta property="og:image" content="https://www.maisonsealiah.fr/images/og-image-cabinet.jpg" />
+        <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-cabinet.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Cabinet moderne de kinésithérapie - Maison Sealiah Puteaux" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://www.maisonsealiah.fr/images/og-image-cabinet.jpg" />
+        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-cabinet.jpg" />
       </Helmet>
       
       <div className="max-w-7xl mx-auto">

@@ -17,12 +17,12 @@ function Praticien() {
         <meta property="og:title" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe | Maison Sealiah" />
         <meta property="og:description" content="Masseur-Kinésithérapeute et Ostéopathe à Puteaux, expert en thérapies manuelles et approches holistiques." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/praticien/arnaud-benhamou" />
-        <meta property="og:image" content="https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg" />
+        <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="800" />
         <meta property="og:image:alt" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg" />
+        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" />
       </Helmet>
       
       <div className="max-w-4xl mx-auto">
@@ -34,7 +34,7 @@ function Praticien() {
         >
           <div className="mb-8">
             <OptimizedImage
-              src="/images/arnaud-benhamou.jpg"
+              src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg"
               alt="Portrait professionnel d'Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe, fondateur de Maison Sealiah"
               className="w-48 h-48 rounded-full mx-auto object-cover mb-6"
               width={192}

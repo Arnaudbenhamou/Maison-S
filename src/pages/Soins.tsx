@@ -14,12 +14,12 @@ export default function Soins() {
         <meta property="og:title" content="Nos Soins - Massages et Thérapies | Maison Sealiah" />
         <meta property="og:description" content="Découvrez nos soins holistiques : massages signature, soins énergétiques, reiki. Techniques ancestrales et modernes." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/soins" />
-        <meta property="og:image" content="https://www.maisonsealiah.fr/images/og-image-soins.jpg" />
+        <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-soins.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Soins et massages thérapeutiques - Maison Sealiah" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://www.maisonsealiah.fr/images/og-image-soins.jpg" />
+        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-soins.jpg" />
       </Helmet>
       
       <div className="max-w-7xl mx-auto">

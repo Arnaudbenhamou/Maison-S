@@ -14,12 +14,12 @@ export default function Specialites() {
         <meta property="og:title" content="Nos Spécialités - Kinésithérapie & Ostéopathie | Maison Sealiah" />
         <meta property="og:description" content="Kinésithérapie, ostéopathie, bien-être. Rééducation et thérapie manuelle par Arnaud Benhamou à Puteaux." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/specialites" />
-        <meta property="og:image" content="https://www.maisonsealiah.fr/images/og-image-specialites.jpg" />
+        <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-specialites.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Spécialités kinésithérapie et ostéopathie - Maison Sealiah" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://www.maisonsealiah.fr/images/og-image-specialites.jpg" />
+        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-specialites.jpg" />
       </Helmet>
       
       <div className="max-w-7xl mx-auto">

@@ -66,13 +66,13 @@ function Home() {
         <meta property="og:title" content="Maison Sealiah | Centre de kinésithérapie et ostéopathie à Puteaux" />
         <meta property="og:description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique." />
         <meta property="og:url" content="https://www.maisonsealiah.fr/" />
-        <meta property="og:image" content="https://www.maisonsealiah.fr/images/og-image.jpg" />
+        <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Maison Sealiah - Centre de kinésithérapie et ostéopathie à Puteaux" />
         <meta property="og:site_name" content="Maison Sealiah" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://www.maisonsealiah.fr/images/og-image.jpg" />
+        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image.jpg" />
         <meta property="twitter:image:alt" content="Maison Sealiah - Centre de kinésithérapie et ostéopathie à Puteaux" />
       </Helmet>
       
@@ -269,7 +269,7 @@ function Home() {
                 aria-label="En savoir plus sur Arnaud Benhamou, Masseur-Kinésithérapeute Ostéopathe"
               >
                 <OptimizedImage
-                  src="/images/arnaud-benhamou.jpg" 
+                  src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" 
                   alt="Portrait professionnel d'Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe, fondateur de Maison Sealiah"
                   className="w-40 h-40 rounded-full mx-auto mb-6 object-cover hover:scale-105 transition-transform duration-300"
                   width={160}
