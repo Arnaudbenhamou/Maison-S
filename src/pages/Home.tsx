@@ -585,7 +585,6 @@ function Home() {
                 </a>
               </p>
             </address>
-            </div>
             <div className="mt-8">
               <h4 className="text-xl font-serif text-sealiah-eucalyptus mb-4">Horaires</h4>
               <div className="space-y-2 text-sealiah-amber" role="list">
