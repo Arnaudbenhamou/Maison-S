@@ -370,7 +370,8 @@ function Home() {
             <h2 id="equipe-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Notre Équipe</h2>
           </motion.div>
 
-          <div className="max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Arnaud Benhamou */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -393,6 +394,32 @@ function Home() {
                 <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-2">Arnaud Benhamou</h3>
                 <p className="text-sealiah-amber font-semibold mb-4">Masseur-Kinésithérapeute Ostéopathe</p>
                 <p className="text-sealiah-amber">Fondateur de Maison Sealiah</p>
+              </Link>
+            </motion.div>
+
+            {/* Clément Jankowski */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
+            >
+              <Link 
+                to="/notre-equipe" 
+                className="block focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded-lg"
+                aria-label="En savoir plus sur Clément Jankowski, Masseur-Kinésithérapeute"
+              >
+                <OptimizedImage
+                  src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Clement-Jankowski-kinesitherapeute-Puteaux.png" 
+                  alt="Portrait professionnel de Clément Jankowski, Masseur-Kinésithérapeute à Maison Sealiah"
+                  className="w-40 h-40 rounded-full mx-auto mb-6 object-cover hover:scale-105 transition-transform duration-300"
+                  width={160}
+                  height={160}
+                  loading="lazy"
+                />
+                <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-2">Clément Jankowski</h3>
+                <p className="text-sealiah-amber font-semibold mb-4">Masseur-Kinésithérapeute</p>
+                <p className="text-sealiah-amber">Spécialiste en rééducation</p>
               </Link>
             </motion.div>
           </div>
