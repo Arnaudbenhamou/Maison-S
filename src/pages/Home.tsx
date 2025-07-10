@@ -198,7 +198,7 @@ function Home() {
               },
               {
                 title: "Savoir-faire thérapeutique",
-                description: "Une prise en charge experte et préventive",
+                description: "Une prise en charge experte et préventive à chaque étape de votre parcours de soin",
                 icon: <Stethoscope className="w-8 h-8" aria-hidden="true" />
               },
               {
