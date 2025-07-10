@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, Globe } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
+import AccessibleButton from '../components/AccessibleButton';
 
 function Praticien() {
   const doctolibUrl = "https://www.doctolib.fr/cabinet-paramedical/puteaux/maison-sealiah-centre-de-sante-kinesitherapie-osteopathie";
