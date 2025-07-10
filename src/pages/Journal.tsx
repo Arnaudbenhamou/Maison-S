@@ -1,0 +1,75 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+export default function Journal() {
+  return (
+    <div className="min-h-screen py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl md:text-5xl font-serif text-sealiah-eucalyptus mb-6">
+            Le Journal
+          </h1>
+          <p className="text-xl text-sealiah-amber max-w-2xl mx-auto">
+            Explorez nos articles sur le bien-être, la pleine conscience et l'art de vivre.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Méditation guidée"
+              className="w-full h-64 object-cover rounded-lg mb-6"
+            />
+            <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
+              L'Art de la Méditation au Quotidien
+            </h2>
+            <p className="text-sealiah-amber mb-4">
+              Découvrez comment intégrer la méditation dans votre routine quotidienne pour plus de
+              sérénité et de présence.
+            </p>
+            <div className="flex items-center text-sealiah-amber">
+              <span>12 Mars 2024</span>
+              <span className="mx-2">•</span>
+              <span>5 min de lecture</span>
+            </div>
+          </motion.article>
+
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Routine bien-être"
+              className="w-full h-64 object-cover rounded-lg mb-6"
+            />
+            <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
+              5 Rituels du Matin pour une Journée Équilibrée
+            </h2>
+            <p className="text-sealiah-amber mb-4">
+              Commencez vos journées avec intention grâce à ces rituels simples mais puissants.
+            </p>
+            <div className="flex items-center text-sealiah-amber">
+              <span>8 Mars 2024</span>
+              <span className="mx-2">•</span>
+              <span>4 min de lecture</span>
+            </div>
+          </motion.article>
+        </div>
+      </div>
+    </div>
+  );
+}
