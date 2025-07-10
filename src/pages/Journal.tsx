@@ -328,34 +328,3 @@ export default function Journal() {
     </div>
   );
 }
-
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
-          >
-            <OptimizedImage
-              src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Routine matinale bien-être avec yoga et méditation dans un cadre naturel"
-              className="w-full h-64 object-cover rounded-lg mb-6"
-              width={600}
-              height={256}
-              loading="lazy"
-            />
-            <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
-              5 Rituels du Matin pour une Journée Équilibrée
-            </h2>
-            <p className="text-sealiah-amber mb-4">
-              Commencez vos journées avec intention grâce à ces rituels simples mais puissants.
-            </p>
-            <div className="flex items-center text-sealiah-amber" role="contentinfo">
-              <time dateTime="2024-03-08">8 Mars 2024</time>
-              <span className="mx-2">•</span>
-              <span>4 min de lecture</span>
-            </div>
-          </motion.article>
-        </section>
-      </div>
-    </div>
-  );
-}
