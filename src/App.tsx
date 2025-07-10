@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import SkipLink from './components/SkipLink';
+import SEOMonitoring from './components/SEOMonitoring';
 import Home from './pages/Home';
 import Soins from './pages/Soins';
 import Specialites from './pages/Specialites.tsx';
@@ -85,6 +86,7 @@ function App() {
   return (
     <>
       <SkipLink />
+      <SEOMonitoring />
       <ScrollToTop />
       <div className="min-h-screen bg-gradient-to-b from-sealiah-ivory to-sealiah-sand flex flex-col">
         <motion.header 

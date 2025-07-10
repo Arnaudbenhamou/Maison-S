@@ -1,10 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Activity, Heart, Stethoscope } from 'lucide-react';
 
 export default function Specialites() {
   return (
     <div className="min-h-screen py-20 px-6" role="main">
+      <Helmet>
+        <title>Nos Spécialités - Kinésithérapie & Ostéopathie | Maison Sealiah</title>
+        <meta name="description" content="Spécialités Maison Sealiah Puteaux : kinésithérapie, ostéopathie, bien-être. Rééducation, thérapie manuelle, soins personnalisés par Arnaud Benhamou." />
+        <meta name="keywords" content="kinésithérapie, ostéopathie, rééducation, thérapie manuelle, Puteaux, Arnaud Benhamou, troubles musculo-squelettiques" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/specialites" />
+        <meta property="og:title" content="Nos Spécialités - Kinésithérapie & Ostéopathie | Maison Sealiah" />
+        <meta property="og:description" content="Kinésithérapie, ostéopathie, bien-être. Rééducation et thérapie manuelle par Arnaud Benhamou à Puteaux." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/specialites" />
+      </Helmet>
+      
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

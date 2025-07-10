@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Heart, Stethoscope, MessageSquare, Star, Users, Sparkles, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedText from '../components/AnimatedText';
 import OptimizedImage from '../components/OptimizedImage';
 import AccessibleButton from '../components/AccessibleButton';
+import InternalLinks from '../components/InternalLinks';
 
 function Home() {
   const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret";
@@ -56,6 +58,17 @@ function Home() {
 
   return (
     <div className="relative">
+      <Helmet>
+        <title>Maison Sealiah | Centre de kinésithérapie et ostéopathie à Puteaux</title>
+        <meta name="description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique par Arnaud Benhamou. Prenez RDV sur Doctolib." />
+        <meta name="keywords" content="kinésithérapie, ostéopathie, massage, Puteaux, Arnaud Benhamou, bien-être, rééducation, thérapie manuelle, Doctolib" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/" />
+        <meta property="og:title" content="Maison Sealiah | Centre de kinésithérapie et ostéopathie à Puteaux" />
+        <meta property="og:description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/" />
+        <meta property="og:image" content="https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg" />
+      </Helmet>
+      
       {/* Hero Section */}
       <section 
         className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-10"
@@ -594,6 +607,28 @@ function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Maillage interne */}
+      <section className="py-16 px-6 bg-sealiah-ivory/30" aria-labelledby="internal-links-heading">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 id="internal-links-heading" className="text-3xl font-serif text-sealiah-eucalyptus mb-4">
+              Découvrez l'univers Maison Sealiah
+            </h2>
+            <p className="text-lg text-sealiah-amber max-w-2xl mx-auto">
+              Explorez nos services, notre expertise et notre approche holistique du bien-être
+            </p>
+          </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <InternalLinks />
+          </div>
         </div>
       </section>
     </div>

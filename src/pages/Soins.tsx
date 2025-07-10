@@ -1,10 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import OptimizedImage from '../components/OptimizedImage';
 
 export default function Soins() {
   return (
     <div className="min-h-screen py-20 px-6" role="main">
+      <Helmet>
+        <title>Nos Soins - Massages et Thérapies | Maison Sealiah Puteaux</title>
+        <meta name="description" content="Découvrez nos soins holistiques à Puteaux : massages signature, soins énergétiques, reiki. Techniques ancestrales et modernes pour votre bien-être." />
+        <meta name="keywords" content="massage, soins énergétiques, reiki, bien-être, Puteaux, thérapie holistique, relaxation" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/soins" />
+        <meta property="og:title" content="Nos Soins - Massages et Thérapies | Maison Sealiah" />
+        <meta property="og:description" content="Découvrez nos soins holistiques : massages signature, soins énergétiques, reiki. Techniques ancestrales et modernes." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/soins" />
+      </Helmet>
+      
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

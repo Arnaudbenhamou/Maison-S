@@ -1,10 +1,21 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import OptimizedImage from '../components/OptimizedImage';
 
 export default function Journal() {
   return (
     <div className="min-h-screen py-20 px-6" role="main">
+      <Helmet>
+        <title>Journal Bien-être - Articles Santé | Maison Sealiah</title>
+        <meta name="description" content="Articles bien-être et santé par Maison Sealiah : méditation, routines matinales, conseils pour une vie équilibrée. Expertise en kinésithérapie et ostéopathie." />
+        <meta name="keywords" content="bien-être, méditation, santé, conseils, routine matinale, équilibre, kinésithérapie, ostéopathie" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/journal" />
+        <meta property="og:title" content="Journal Bien-être - Articles Santé | Maison Sealiah" />
+        <meta property="og:description" content="Articles bien-être et conseils santé par nos experts en kinésithérapie et ostéopathie." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/journal" />
+      </Helmet>
+      
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

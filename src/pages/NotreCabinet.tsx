@@ -1,11 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { MapPin, Clock, Phone, Users, Dumbbell, Heart } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 
 export default function NotreCabinet() {
   return (
     <div className="min-h-screen py-20 px-6" role="main">
+      <Helmet>
+        <title>Notre Cabinet - Équipements & Locaux | Maison Sealiah Puteaux</title>
+        <meta name="description" content="Découvrez notre cabinet de 200m² à Puteaux : salles de kinésithérapie, espace bien-être, plateau technique. Équipements modernes pour votre rééducation." />
+        <meta name="keywords" content="cabinet kinésithérapie, Puteaux, équipements médicaux, plateau technique, rééducation, 92800" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/notre-cabinet" />
+        <meta property="og:title" content="Notre Cabinet - Équipements & Locaux | Maison Sealiah" />
+        <meta property="og:description" content="Cabinet de 200m² à Puteaux avec équipements modernes pour kinésithérapie et bien-être." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/notre-cabinet" />
+      </Helmet>
+      
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Phone, Mail, MapPin, Globe } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 
@@ -8,6 +9,17 @@ function Praticien() {
 
   return (
     <div className="min-h-screen py-20 px-6" role="main">
+      <Helmet>
+        <title>Arnaud Benhamou - Kinésithérapeute Ostéopathe | Maison Sealiah</title>
+        <meta name="description" content="Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe à Puteaux. Fondateur de Maison Sealiah, expert en thérapies manuelles et approches holistiques." />
+        <meta name="keywords" content="Arnaud Benhamou, kinésithérapeute, ostéopathe, Puteaux, thérapie manuelle, massage, rééducation, Doctolib" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/praticien/arnaud-benhamou" />
+        <meta property="og:title" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe | Maison Sealiah" />
+        <meta property="og:description" content="Masseur-Kinésithérapeute et Ostéopathe à Puteaux, expert en thérapies manuelles et approches holistiques." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/praticien/arnaud-benhamou" />
+        <meta property="og:image" content="https://www.maisonsealiah.fr/images/arnaud-benhamou.jpg" />
+      </Helmet>
+      
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
