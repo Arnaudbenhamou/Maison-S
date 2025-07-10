@@ -119,6 +119,95 @@ export class ArticleService {
     return data || [];
   }
 
+  // Récupérer des articles similaires basés sur les tags et la catégorie
+  static async getSimilarArticles(currentArticle: Article, limit: number = 4): Promise<Article[]> {
+    try {
+      // 1. Chercher d'abord par tags communs
+      let similarByTags: Article[] = [];
+      if (currentArticle.tags && currentArticle.tags.length > 0) {
+        const { data: tagData, error: tagError } = await supabase
+          .from('articles')
+          .select('*')
+          .eq('status', 'published')
+          .lte('published_at', new Date().toISOString())
+          .neq('id', currentArticle.id)
+          .overlaps('tags', currentArticle.tags)
+          .order('published_at', { ascending: false })
+          .limit(limit);
+
+        if (!tagError && tagData) {
+          similarByTags = tagData;
+        }
+      }
+
+      // 2. Si pas assez d'articles par tags, compléter avec la même catégorie
+      if (similarByTags.length < limit) {
+        const remainingLimit = limit - similarByTags.length;
+        const excludeIds = [currentArticle.id, ...similarByTags.map(a => a.id)];
+        
+        const { data: categoryData, error: categoryError } = await supabase
+          .from('articles')
+          .select('*')
+          .eq('status', 'published')
+          .eq('category', currentArticle.category)
+          .lte('published_at', new Date().toISOString())
+          .not('id', 'in', `(${excludeIds.join(',')})`)
+          .order('published_at', { ascending: false })
+          .limit(remainingLimit);
+
+        if (!categoryError && categoryData) {
+          similarByTags = [...similarByTags, ...categoryData];
+        }
+      }
+
+      // 3. Si toujours pas assez, prendre les articles récents
+      if (similarByTags.length < limit) {
+        const remainingLimit = limit - similarByTags.length;
+        const excludeIds = [currentArticle.id, ...similarByTags.map(a => a.id)];
+        
+        const { data: recentData, error: recentError } = await supabase
+          .from('articles')
+          .select('*')
+          .eq('status', 'published')
+          .lte('published_at', new Date().toISOString())
+          .not('id', 'in', `(${excludeIds.join(',')})`)
+          .order('published_at', { ascending: false })
+          .limit(remainingLimit);
+
+        if (!recentError && recentData) {
+          similarByTags = [...similarByTags, ...recentData];
+        }
+      }
+
+      return similarByTags.slice(0, limit);
+    } catch (error) {
+      console.error('Erreur lors de la récupération des articles similaires:', error);
+      // En cas d'erreur, retourner des articles récents
+      return this.getRecentArticles(limit);
+    }
+  }
+
+  // Calculer le score de similarité entre deux articles
+  static calculateSimilarityScore(article1: Article, article2: Article): number {
+    let score = 0;
+    
+    // Points pour la même catégorie
+    if (article1.category === article2.category) {
+      score += 3;
+    }
+    
+    // Points pour les tags communs
+    const commonTags = article1.tags.filter(tag => article2.tags.includes(tag));
+    score += commonTags.length * 2;
+    
+    // Points pour le même auteur
+    if (article1.author_id === article2.author_id) {
+      score += 1;
+    }
+    
+    return score;
+  }
+
   // Rechercher des articles
   static async searchArticles(searchTerm: string): Promise<Article[]> {
     const { data, error } = await supabase

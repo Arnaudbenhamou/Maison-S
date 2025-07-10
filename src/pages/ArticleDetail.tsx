@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Calendar, Clock, User, Tag, ArrowLeft, Share2 } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
+import SimilarArticles from '../components/SimilarArticles';
 import { ArticleService } from '../services/articleService';
 import type { Article } from '../types/article';
 
@@ -32,9 +33,9 @@ export default function ArticleDetail() {
 
       setArticle(articleData);
       
-      // Charger les articles liés (même catégorie)
-      const related = await ArticleService.getArticlesByCategory(articleData.category, 3);
-      setRelatedArticles(related.filter(a => a.id !== articleData.id));
+      // Charger les articles similaires
+      const related = await ArticleService.getSimilarArticles(articleData, 4);
+      setRelatedArticles(related);
       
     } catch (error) {
       console.error('Erreur lors du chargement de l\'article:', error);
@@ -270,53 +271,8 @@ export default function ArticleDetail() {
           </span>
         </motion.div>
 
-        {/* Articles liés */}
-        {relatedArticles.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            aria-labelledby="related-articles"
-          >
-            <h2 id="related-articles" className="text-3xl font-serif text-sealiah-eucalyptus mb-8 text-center">
-              Articles similaires
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedArticles.map((relatedArticle, index) => (
-                <motion.article
-                  key={relatedArticle.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1 + index * 0.1 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <Link to={`/journal/${relatedArticle.slug}`} className="block">
-                    {relatedArticle.featured_image && (
-                      <OptimizedImage
-                        src={relatedArticle.featured_image}
-                        alt={relatedArticle.featured_image_alt || relatedArticle.title}
-                        className="w-full h-48 object-cover"
-                        width={400}
-                        height={192}
-                        loading="lazy"
-                      />
-                    )}
-                    <div className="p-6">
-                      <h3 className="text-lg font-serif text-sealiah-eucalyptus mb-3 hover:text-sealiah-amber transition-colors">
-                        {relatedArticle.title}
-                      </h3>
-                      {relatedArticle.excerpt && (
-                        <p className="text-sealiah-amber text-sm line-clamp-3">
-                          {relatedArticle.excerpt}
-                        </p>
-                      )}
-                    </div>
-                  </Link>
-                </motion.article>
-              ))}
-            </div>
-          </motion.section>
-        )}
+        {/* Articles similaires */}
+        <SimilarArticles articles={relatedArticles} currentArticleId={article.id} />
       </div>
     </div>
   );
