@@ -11,6 +11,7 @@ import NotreCabinet from './pages/NotreCabinet';
 import Journal from './pages/Journal';
 import ArticleDetail from './pages/ArticleDetail';
 import Praticien from './pages/Praticien';
+import Offrir from './pages/Offrir';
 import { useMobileScrollFix } from './utils/mobileScrollFix';
 
 // Hook pour détecter si on est sur mobile
@@ -95,6 +96,7 @@ function AnimatedRoutes() {
         <Route path="/journal" element={<PageWrapper><Journal /></PageWrapper>} />
         <Route path="/journal/:slug" element={<PageWrapper><ArticleDetail /></PageWrapper>} />
         <Route path="/praticien/arnaud-benhamou" element={<PageWrapper><Praticien /></PageWrapper>} />
+        <Route path="/offrir" element={<PageWrapper><Offrir /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );
@@ -109,10 +111,11 @@ function App() {
 
   const menuItems = [
     { path: '/', label: 'Accueil' },
-    { path: '/soins', label: 'Soins' },
     { path: '/specialites', label: 'Nos Spécialités' },
-    { path: '/notre-cabinet', label: 'Notre Cabinet' },
-    { path: '/journal', label: 'Journal' }
+    { path: '/soins', label: 'Soins' },
+    { path: '/notre-cabinet', label: 'Le lieu' },
+    { path: '/journal', label: 'Journal' },
+    { path: '/offrir', label: 'Offrir' }
   ];
 
   return (
