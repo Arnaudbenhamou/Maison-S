@@ -88,46 +88,20 @@ function Home() {
       
       {/* Hero Section */}
       <section 
-        className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden -mt-10"
+        className="hero-section relative min-h-screen flex items-center justify-center -mt-10"
         aria-label="Section d'accueil principale"
-        style={isMobile ? { 
-          minHeight: 'calc(var(--vh, 1vh) * 100 - 80px)',
-          transform: 'translateZ(0)',
-          background: 'linear-gradient(rgba(245, 237, 228, 0.4), rgba(255, 253, 249, 0.4)), url("https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080&q=80") center/cover'
-        } : {}}
       >
-        {/* Vidéo uniquement sur desktop */}
-        {!isMobile && (
-          <div className="absolute w-full h-full">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover opacity-60"
-              aria-hidden="true"
-              tabIndex={-1}
-              poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23F5EDE4'/%3E%3C/svg%3E"
-            >
-              <source src="https://player.vimeo.com/external/517090081.hd.mp4?s=b0c347f69c0797f5aa24c6df0b3c8ccf4e2f8a2c&profile_id=175" type="video/mp4" />
-            </video>
-          </div>
-        )}
-        
-        {/* Overlay gradient uniquement sur desktop (mobile a déjà le gradient dans le background) */}
-        {!isMobile && (
-          <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory/40 to-sealiah-sand/40" aria-hidden="true" />
-        )}
+        {/* Fond dégradé du thème */}
+        <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory to-sealiah-sand" aria-hidden="true" />
 
-        <div className={`relative z-10 text-center px-4 max-w-7xl mx-auto ${isMobile ? 'translate-y-4' : 'translate-y-8'}`}>
+        <div className="relative z-10 text-center px-4 max-w-7xl mx-auto translate-y-8">
           <div className="flex flex-col items-center justify-center space-y-12">
             {/* Logo */}
             <motion.div 
               className="w-[90vw] sm:w-[500px] md:w-[600px] lg:w-[700px]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: isMobile ? 0.6 : 1 }}
+              transition={{ duration: 1 }}
             >
               <OptimizedImage 
                 src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Maison-Sealiah-prevenir-soigner-apaiser.png" 
@@ -146,7 +120,7 @@ function Home() {
               className="text-2xl md:text-3xl lg:text-4xl font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: isMobile ? 0.4 : 0.8, delay: isMobile ? 0.2 : 0.4 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
               Le bien-être n'est plus une activité ou une mode, il répond à des besoins humains fondamentaux.
             </motion.h1>
@@ -156,7 +130,7 @@ function Home() {
               className="text-xl md:text-2xl lg:text-3xl font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: isMobile ? 0.4 : 0.8, delay: isMobile ? 0.4 : 0.8 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
               STOP THINKING, JUST FEEL IT...
             </motion.p>
@@ -165,7 +139,7 @@ function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: isMobile ? 0.4 : 0.8, delay: isMobile ? 0.6 : 1.2 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
               className="mt-8 relative z-10 bg-gradient-to-b from-sealiah-ivory to-sealiah-sand p-0.5 rounded-full"
             >
               <AccessibleButton
