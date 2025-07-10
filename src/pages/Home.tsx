@@ -55,7 +55,7 @@ function Home() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-10">
         <video
           autoPlay
           loop
@@ -68,11 +68,11 @@ function Home() {
         
         <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory/40 to-sealiah-sand/40" />
 
-        <div className="relative z-10 text-center px-4 max-w-7xl mx-auto -translate-y-6">
+        <div className="relative z-10 text-center px-4 max-w-7xl mx-auto translate-y-8">
           <div className="flex flex-col items-center justify-center space-y-12">
             {/* Logo */}
             <motion.div 
-              className="w-[90vw] sm:w-[500px] md:w-[600px]"
+              className="w-[90vw] sm:w-[500px] md:w-[600px] lg:w-[700px]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
