@@ -11,55 +11,34 @@ function Praticien() {
   return (
     <div className="min-h-screen py-20 px-6" role="main">
       <Helmet>
-        <title>Kinésithérapeute Ostéopathe Puteaux - Arnaud Benhamou | Maison Sealiah</title>
-        <meta name="description" content="Arnaud Benhamou, Kinésithérapeute Ostéopathe à Puteaux. Expert en thérapies manuelles, massages thérapeutiques et approches holistiques. Prenez RDV sur Doctolib." />
-        <meta name="keywords" content="kinésithérapeute Puteaux, ostéopathe Puteaux, Arnaud Benhamou, thérapie manuelle, massage thérapeutique, rééducation, Doctolib, 92800" />
-        <link rel="canonical" href="https://www.maisonsealiah.fr/praticien-kinesitherapeute-osteopathe-puteaux" />
-        <meta property="og:title" content="Kinésithérapeute Ostéopathe Puteaux - Arnaud Benhamou | Maison Sealiah" />
-        <meta property="og:description" content="Kinésithérapeute Ostéopathe expert à Puteaux. Thérapies manuelles et approches holistiques par Arnaud Benhamou." />
-        <meta property="og:url" content="https://www.maisonsealiah.fr/praticien-kinesitherapeute-osteopathe-puteaux" />
-        <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="800" />
-        <meta property="og:image:alt" content="Arnaud Benhamou - Kinésithérapeute Ostéopathe Puteaux" />
+        <title>Notre Équipe - Kinésithérapeutes Ostéopathes Puteaux | Maison Sealiah</title>
+        <meta name="description" content="Découvrez l'équipe pluridisciplinaire de Maison Sealiah à Puteaux : Arnaud Benhamou et Clément Jankowski, kinésithérapeutes ostéopathes experts en thérapies manuelles." />
+        <meta name="keywords" content="équipe kinésithérapeute Puteaux, ostéopathe Puteaux, Arnaud Benhamou, Clément Jankowski, thérapie manuelle, rééducation, Doctolib, 92800" />
+        <link rel="canonical" href="https://www.maisonsealiah.fr/notre-equipe" />
+        <meta property="og:title" content="Notre Équipe - Kinésithérapeutes Ostéopathes Puteaux | Maison Sealiah" />
+        <meta property="og:description" content="Équipe pluridisciplinaire de kinésithérapeutes ostéopathes experts à Puteaux. Thérapies manuelles et approches holistiques." />
+        <meta property="og:url" content="https://www.maisonsealiah.fr/notre-equipe" />
+        <meta property="og:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-equipe.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Équipe Maison Sealiah - Kinésithérapeutes Ostéopathes Puteaux" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/arnaud-benhamou.jpg" />
+        <meta property="twitter:image" content="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah/social-sharing/og-image-equipe.jpg" />
       </Helmet>
       
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="mb-8">
-            <OptimizedImage
-              src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//arnaud-benhamou.jpg"
-              alt="Logo Maison Sealiah - Prévenir, Soigner, Apaiser"
-              className="w-48 h-48 rounded-full mx-auto object-cover mb-6"
-              width={192}
-              height={192}
-              loading="lazy"
-            />
-            <h1 className="text-4xl md:text-5xl font-serif text-sealiah-eucalyptus mb-4">
-              Arnaud Benhamou
-            </h1>
-            <p className="text-xl text-sealiah-amber">
-              Masseur-Kinésithérapeute et Ostéopathe
-            </p>
-            <div className="mt-8">
-              <AccessibleButton
-                href={doctolibUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
-                aria-label="Prendre rendez-vous avec Arnaud Benhamou sur Doctolib - Ouvre dans un nouvel onglet"
-              >
-                Prendre rendez-vous
-              </AccessibleButton>
-            </div>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-serif text-sealiah-eucalyptus mb-6">
+            Notre Équipe
+          </h1>
+          <p className="text-xl text-sealiah-amber max-w-3xl mx-auto leading-relaxed">
+            Une équipe pluridisciplinaire dédiée à votre bien-être et votre santé
+          </p>
         </motion.div>
 
         {/* Contact Information */}
@@ -67,12 +46,16 @@ function Praticien() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-8"
+          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-12"
         >
+          <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-6 text-center">Nos Coordonnées</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
               <Phone className="w-5 h-5" aria-hidden="true" />
-              <a href="tel:+33603736838" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">06.03.73.68.38</a>
+              <div>
+                <p>Fixe : <a href="tel:+33140850022" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">01 40 85 00 22</a></p>
+                <p>Mobile : <a href="tel:+33603736838" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">06 03 73 68 38</a></p>
+              </div>
             </div>
             <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
               <MapPin className="w-5 h-5" aria-hidden="true" />
@@ -82,130 +65,153 @@ function Praticien() {
               <Globe className="w-5 h-5" aria-hidden="true" />
               <span>Français, Anglais, Espagnol</span>
             </div>
+            <div className="flex items-center justify-center md:justify-start">
+              <AccessibleButton
+                href={doctolibUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
+                aria-label="Prendre rendez-vous sur Doctolib - Ouvre dans un nouvel onglet"
+              >
+                Prendre rendez-vous
+              </AccessibleButton>
+            </div>
           </div>
         </motion.div>
 
-        {/* Présentation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-8"
-        >
-          <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-6">Présentation</h2>
-          <div className="space-y-4 text-sealiah-amber">
-            <p>
-              Bonjour, je vous accueille du lundi au vendredi au sein du cabinet de kinésithérapie et d'ostéopathie, 
-              situé au 9 Rue Roque de Fillol, 92800 Puteaux, France.
-            </p>
-            <p>
-              Ma pratique repose sur une approche intégrative qui vise à identifier et traiter la source de vos maux, 
-              au-delà de vos simples symptômes.
-            </p>
-            <p>
-              Mon parcours professionnel a été enrichi par une exploration des pratiques thérapeutiques diverses à travers le monde. 
-              Tout en reconnaissant les mérites de la médecine allopathique, j'ai constaté qu'elle peut parfois présenter des 
-              lacunes dans la prise en charge globale des patients.
-            </p>
-            <p>
-              Animé par la quête de solutions holistiques et alternatives, j'ai entrepris des voyages enrichissants à Bali, 
-              en Inde, en Thaïlande et à l'Université de médecine chinoise de Pékin, où j'ai découvert des approches 
-              complémentaires et traditionnelles de soin.
-            </p>
-            <p>
-              De retour en France, j'ai choisi de compléter ma formation en me spécialisant dans l'ostéopathie, 
-              afin d'offrir à mes patients une prise en charge globale et personnalisée.
-            </p>
-            <p>
-              Convaincu par les bienfaits des thérapies naturelles, je propose également des conseils en phytothérapie, 
-              utilisant les vertus thérapeutiques des plantes, fruits, végétaux et minéraux pour favoriser la régénération 
-              tissulaire et optimiser votre bien-être au quotidien.
-            </p>
-            <p>
-              Je suis impatient de vous rencontrer et de vous accompagner sur le chemin de la santé et du bien-être.
-            </p>
-            <p className="font-serif text-sealiah-eucalyptus text-lg">
-              Arnaud Benhamou
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Formation */}
+        {/* Présentation de Maison Sealiah */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg"
+          className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-12"
         >
-          <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-6">Parcours Professionnel</h2>
-          
-          {/* Diplômes nationaux et universitaires */}
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-4">
-              Diplômes nationaux et universitaires
-            </h3>
-            <div className="space-y-4" role="list">
-              <div>
-                <p className="text-sealiah-amber font-semibold" role="listitem">2022</p>
-                <p className="text-sealiah-amber">Diplôme d'Ostéopathe (D.O.) - Collège Ostéopathique du Pays Basque (COPB)</p>
-              </div>
-              <div>
-                <p className="text-sealiah-amber font-semibold" role="listitem">2015</p>
-                <p className="text-sealiah-amber">Diplôme d'État de Masseur-Kinésithérapeute - Université Alfonso X el Sabio (UAX) - Madrid</p>
-              </div>
-            </div>
+          <h2 className="text-2xl font-serif text-sealiah-eucalyptus mb-6 text-center">Maison Sealiah</h2>
+          <div className="space-y-4 text-sealiah-amber leading-relaxed">
+            <p>
+              Maison Sealiah est un lieu de soin pensé pour conjuguer rigueur thérapeutique, accompagnement global et expérience sensorielle.
+            </p>
+            <p>
+              Notre équipe pluridisciplinaire regroupe des professionnels spécialisés en kinésithérapie, ostéopathie et coaching sportif, engagés autour d'un objectif commun : prendre soin du corps dans toutes ses dimensions, à chaque étape de la vie.
+            </p>
+            <p>
+              Ici, la prise en charge ne se limite pas au geste technique : elle s'inscrit dans une attention globale, personnalisée et humaine. Chaque séance est pensée comme un temps de respiration, dans un cadre apaisant, où l'expertise, le confort, la discrétion et l'écoute sont au cœur de notre démarche.
+            </p>
+            <p>
+              Chez Maison Sealiah, la précision du geste, la qualité du toucher, le soin apporté à chaque détail et la bienveillance de notre équipe font partie de notre ADN.
+            </p>
+            <p>
+              Un lieu où l'on vient pour se soigner, mais aussi pour se recentrer, se reconnecter à soi.
+            </p>
+            <p className="font-serif text-sealiah-eucalyptus text-lg text-center mt-6">
+              Au plaisir de vous rencontrer.<br />
+              L'équipe Maison Sealiah.
+            </p>
           </div>
+        </motion.div>
 
-          {/* Autres formations */}
-          <div>
-            <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-4">
-              Autres formations
-            </h3>
-            <div className="space-y-4" role="list">
-              {[
-                {
-                  year: "2020",
-                  title: "Prise en charge des lésions musculaires du sportif",
-                  institution: "INFMP"
-                },
-                {
-                  year: "2018",
-                  title: "Massage ayurvedique",
-                  institution: "Rasovai méditation et massage training school - Inde"
-                },
-                {
-                  year: "2018",
-                  title: "Massage thailandais traditionnel",
-                  institution: "Wat po school - Thaïlande"
-                },
-                {
-                  year: "2017",
-                  title: "Massage Tuina et cupping (ventouse thérapie)",
-                  institution: "Université de médecine chinoise de Pékin"
-                },
-                {
-                  year: "2017",
-                  title: "Massage Balinais",
-                  institution: "Jamu spa school - Bali"
-                },
-                {
-                  year: "2016",
-                  title: "Traitement des cicatrices",
-                  institution: "Formatkine - Paris"
-                },
-                {
-                  year: "2016",
-                  title: "Kinésithérapie respiratoire du nourrisson et de l'enfant de 0 à 2 ans",
-                  institution: "Kiné pédiatrie - Paris"
-                }
-              ].map((formation, index) => (
-                <div key={index} role="listitem">
-                  <p className="text-sealiah-amber font-semibold">{formation.year}</p>
-                  <p className="text-sealiah-amber">{formation.title}</p>
-                  <p className="text-sealiah-amber text-sm">{formation.institution}</p>
+        {/* Équipe */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl font-serif text-sealiah-eucalyptus mb-12 text-center">
+            Nos Praticiens
+          </h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Arnaud Benhamou */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
+            >
+              <OptimizedImage
+                src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//arnaud-benhamou.jpg"
+                alt="Portrait professionnel d'Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe, fondateur de Maison Sealiah"
+                className="w-48 h-48 rounded-full mx-auto object-cover mb-6"
+                width={192}
+                height={192}
+                loading="lazy"
+              />
+              <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-2">Arnaud Benhamou</h3>
+              <p className="text-sealiah-amber font-semibold mb-4">Masseur-Kinésithérapeute Ostéopathe</p>
+              <p className="text-sealiah-amber mb-4">Fondateur de Maison Sealiah</p>
+              
+              <div className="text-left space-y-4 text-sealiah-amber">
+                <h4 className="text-lg font-serif text-sealiah-eucalyptus mb-3">Diplômes</h4>
+                <div className="space-y-2 text-sm">
+                  <p><strong>2022</strong> - Diplôme d'Ostéopathe (D.O.) - Collège Ostéopathique du Pays Basque (COPB)</p>
+                  <p><strong>2015</strong> - Diplôme d'État de Masseur-Kinésithérapeute - Université Alfonso X el Sabio (UAX) - Madrid</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            </motion.div>
+
+            {/* Clément Jankowski */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
+            >
+              <OptimizedImage
+                src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Clement-Jankowski-kinesitherapeute-Puteaux.png"
+                alt="Portrait professionnel de Clément Jankowski, Masseur-Kinésithérapeute à Maison Sealiah"
+                className="w-48 h-48 rounded-full mx-auto object-cover mb-6"
+                width={192}
+                height={192}
+                loading="lazy"
+              />
+              <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-2">Clément Jankowski</h3>
+              <p className="text-sealiah-amber font-semibold mb-6">Masseur-Kinésithérapeute</p>
+              
+              <div className="text-left space-y-4 text-sealiah-amber">
+                <div className="space-y-3">
+                  <p>
+                    Masseur-kinésithérapeute diplômé, je vous accueille au cabinet pour une prise en charge personnalisée, que ce soit pour des douleurs musculo-squelettiques, une rééducation post-opératoire, neurologique ou un accompagnement à la reprise du sport.
+                  </p>
+                  <p>
+                    Je m'appuie sur une approche globale et actualisée, combinant thérapie manuelle, exercices actifs et éducation thérapeutique, dans le respect de vos objectifs : retour au sport, à la marche ou amélioration de votre qualité de vie.
+                  </p>
+                  <p>
+                    Chaque séance est adaptée à votre évolution, avec un suivi régulier et une écoute attentive.
+                  </p>
+                  <p className="font-serif text-sealiah-eucalyptus text-center mt-4">
+                    Au plaisir de vous rencontrer,<br />
+                    Clément
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-sealiah-eucalyptus to-sealiah-amber rounded-2xl p-8 text-sealiah-ivory">
+            <h2 className="text-3xl font-serif mb-4">
+              Prêt à commencer votre parcours de soins ?
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              Prenez rendez-vous avec l'un de nos praticiens pour une prise en charge personnalisée.
+            </p>
+            <AccessibleButton
+              href={doctolibUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sealiah-eucalyptus bg-sealiah-ivory hover:bg-sealiah-sand"
+              aria-label="Prendre rendez-vous sur Doctolib - Ouvre dans un nouvel onglet"
+            >
+              Prendre rendez-vous
+            </AccessibleButton>
           </div>
         </motion.div>
       </div>
