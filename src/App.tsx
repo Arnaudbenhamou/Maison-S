@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import SkipLink from './components/SkipLink';
 import Home from './pages/Home';
@@ -83,7 +83,7 @@ function App() {
   ];
 
   return (
-    <Router>
+    <>
       <SkipLink />
       <ScrollToTop />
       <div className="min-h-screen bg-gradient-to-b from-sealiah-ivory to-sealiah-sand flex flex-col">
@@ -182,7 +182,7 @@ function App() {
           </div>
         </footer>
       </div>
-    </Router>
+    </>
   );
 }
 
