@@ -193,5 +193,6 @@ function Praticien() {
       </div>
     </div>
   );
+}
 
 export default Praticien;
