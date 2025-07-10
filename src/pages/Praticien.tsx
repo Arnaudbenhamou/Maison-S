@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Globe } from 'lucide-react';
 import OptimizedImage from '../components/OptimizedImage';
 
 function Praticien() {
-  const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret/booking?bookingFunnelSource=profile";
+  const doctolibUrl = "https://www.doctolib.fr/cabinet-paramedical/puteaux/maison-sealiah-centre-de-sante-kinesitherapie-osteopathie";
 
   return (
     <div className="min-h-screen py-20 px-6" role="main">

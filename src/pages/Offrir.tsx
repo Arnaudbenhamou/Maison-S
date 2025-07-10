@@ -6,7 +6,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import AccessibleButton from '../components/AccessibleButton';
 
 export default function Offrir() {
-  const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret";
+  const doctolibUrl = "https://www.doctolib.fr/cabinet-paramedical/puteaux/maison-sealiah-centre-de-sante-kinesitherapie-osteopathie";
 
   const giftOptions = [
     {

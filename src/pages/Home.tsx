@@ -9,7 +9,7 @@ import AccessibleButton from '../components/AccessibleButton';
 import InternalLinks from '../components/InternalLinks';
 
 function Home() {
-  const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret";
+  const doctolibUrl = "https://www.doctolib.fr/cabinet-paramedical/puteaux/maison-sealiah-centre-de-sante-kinesitherapie-osteopathie";
   const [isMobile, setIsMobile] = useState(false);
   
   useEffect(() => {
