@@ -4,7 +4,7 @@ import OptimizedImage from '../components/OptimizedImage';
 
 export default function Journal() {
   return (
-    <div className="min-h-screen py-20 px-6">
+    <div className="min-h-screen py-20 px-6" role="main">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export default function Journal() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12" aria-label="Articles du journal bien-être">
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ export default function Journal() {
           >
             <OptimizedImage
               src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Méditation guidée"
+              alt="Personne en méditation dans un environnement paisible et naturel au lever du soleil"
               className="w-full h-64 object-cover rounded-lg mb-6"
               width={600}
               height={256}
@@ -42,8 +42,8 @@ export default function Journal() {
               Découvrez comment intégrer la méditation dans votre routine quotidienne pour plus de
               sérénité et de présence.
             </p>
-            <div className="flex items-center text-sealiah-amber">
-              <span>12 Mars 2024</span>
+            <div className="flex items-center text-sealiah-amber" role="contentinfo">
+              <time dateTime="2024-03-12">12 Mars 2024</time>
               <span className="mx-2">•</span>
               <span>5 min de lecture</span>
             </div>
@@ -57,7 +57,7 @@ export default function Journal() {
           >
             <OptimizedImage
               src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Routine bien-être"
+              alt="Routine matinale bien-être avec yoga et méditation dans un cadre naturel"
               className="w-full h-64 object-cover rounded-lg mb-6"
               width={600}
               height={256}
@@ -69,13 +69,13 @@ export default function Journal() {
             <p className="text-sealiah-amber mb-4">
               Commencez vos journées avec intention grâce à ces rituels simples mais puissants.
             </p>
-            <div className="flex items-center text-sealiah-amber">
-              <span>8 Mars 2024</span>
+            <div className="flex items-center text-sealiah-amber" role="contentinfo">
+              <time dateTime="2024-03-08">8 Mars 2024</time>
               <span className="mx-2">•</span>
               <span>4 min de lecture</span>
             </div>
           </motion.article>
-        </div>
+        </section>
       </div>
     </div>
   );

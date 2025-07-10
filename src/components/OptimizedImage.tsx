@@ -8,6 +8,8 @@ interface OptimizedImageProps {
   height?: number;
   loading?: 'lazy' | 'eager';
   priority?: boolean;
+  role?: string;
+  'aria-describedby'?: string;
 }
 
 const OptimizedImage: React.FC<OptimizedImageProps> = ({
@@ -17,7 +19,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   width,
   height,
   loading = 'lazy',
-  priority = false
+  priority = false,
+  role,
+  'aria-describedby': ariaDescribedBy
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -49,6 +53,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       <div 
         className={`bg-gray-200 flex items-center justify-center ${className}`}
         style={{ width, height }}
+        role="img"
+        aria-label={`Image non disponible: ${alt}`}
       >
         <span className="text-gray-500 text-sm">Image non disponible</span>
       </div>
@@ -61,6 +67,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         <div 
           className={`absolute inset-0 bg-gray-200 animate-pulse ${className}`}
           style={{ width, height }}
+          aria-hidden="true"
         />
       )}
       <img
@@ -73,6 +80,8 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
         onLoad={handleLoad}
         onError={handleError}
         decoding="async"
+        role={role}
+        aria-describedby={ariaDescribedBy}
       />
     </div>
   );

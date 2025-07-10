@@ -5,11 +5,53 @@
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <link rel="preload" href="/fonts/montserrat-v26-latin-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/cormorant-garamond-v16-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Accessibility and SEO meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Maison Sealiah - Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique par Arnaud Benhamou." />
+    <meta name="author" content="Maison Sealiah" />
+    <meta name="keywords" content="kinésithérapie, ostéopathie, massage, bien-être, Puteaux, Arnaud Benhamou, soins thérapeutiques" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#5A6B52" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.maisonsealiah.fr/" />
+    <meta property="og:title" content="Maison Sealiah | Centre de kinésithérapie et ostéopathie" />
+    <meta property="og:description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique." />
+    <meta property="og:image" content="/logo.svg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.maisonsealiah.fr/" />
+    <meta property="twitter:title" content="Maison Sealiah | Centre de kinésithérapie et ostéopathie" />
+    <meta property="twitter:description" content="Centre de kinésithérapie et ostéopathie à Puteaux. Soins thérapeutiques, massages signature et bien-être holistique." />
+    <meta property="twitter:image" content="/logo.svg" />
+    
     <style>
       /* Critical CSS inline */
       html{font-family:'Montserrat',sans-serif;scroll-behavior:smooth}
       body{margin:0;line-height:inherit}
       h1,h2,h3,h4,h5,h6{font-family:'Cormorant Garamond',serif}
+      
+      /* Accessibility improvements */
+      *:focus{outline:2px solid #5A6B52;outline-offset:2px}
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      .skip-link{position:absolute;top:-40px;left:6px;background:#5A6B52;color:#FFFDF9;padding:8px;text-decoration:none;border-radius:4px;z-index:1000}
+      .skip-link:focus{top:6px}
+      
+      /* Reduced motion support */
+      @media (prefers-reduced-motion: reduce) {
+        *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
+      }
+      
+      /* High contrast mode support */
+      @media (prefers-contrast: high) {
+        .text-sealiah-amber{color:#000000 !important}
+        .text-sealiah-eucalyptus{color:#000000 !important}
+        .bg-sealiah-amber{background-color:#FFFFFF !important;border:2px solid #000000 !important}
+      }
+      
       .fixed{position:fixed}
       .w-full{width:100%}
       .top-0{top:0}
@@ -49,21 +91,12 @@
       @media (min-width:768px){.md\:w-\[600px\]{width:600px}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}}
       @media (min-width:1024px){.lg\:w-\[700px\]{width:700px}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Maison Sealiah - L'excellence du soin, fusionnant luxe, spa, thérapie manuelle et art de vivre inspiré de la nature." />
-    <meta name="author" content="Maison Sealiah" />
-    <meta property="og:title" content="Maison Sealiah | L'excellence du soin" />
-    <meta property="og:description" content="L'excellence du soin, fusionnant luxe, spa, thérapie manuelle et art de vivre inspiré de la nature." />
-    <meta property="og:image" content="/logo.svg" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Maison Sealiah | L'excellence du soin" />
-    <meta name="twitter:description" content="L'excellence du soin, fusionnant luxe, spa, thérapie manuelle et art de vivre inspiré de la nature." />
-    <meta name="twitter:image" content="/logo.svg" />
+    
     <link rel="dns-prefetch" href="//images.unsplash.com">
     <link rel="dns-prefetch" href="//player.vimeo.com">
     <link rel="dns-prefetch" href="//eniofgrvwufhyeumeetp.supabase.co">
-    <title>Maison Sealiah | L'excellence du soin</title>
+    
+    <title>Maison Sealiah | Centre de kinésithérapie et ostéopathie à Puteaux</title>
   </head>
   <body>
     <div id="root"></div>

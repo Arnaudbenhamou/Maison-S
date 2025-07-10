@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Heart, Stethoscope, MessageSquare, Star, Users, Sparkles, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import AnimatedText from '../components/AnimatedText';
 import OptimizedImage from '../components/OptimizedImage';
+import AccessibleButton from '../components/AccessibleButton';
 
 function Home() {
   const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret";
@@ -56,7 +57,10 @@ function Home() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-10">
+      <section 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-10"
+        aria-label="Section d'accueil principale"
+      >
         <div className="absolute w-full h-full">
           <video
             autoPlay
@@ -65,13 +69,15 @@ function Home() {
             playsInline
             preload="metadata"
             className="w-full h-full object-cover opacity-60"
+            aria-hidden="true"
+            tabIndex={-1}
             poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23F5EDE4'/%3E%3C/svg%3E"
           >
             <source src="https://player.vimeo.com/external/517090081.hd.mp4?s=b0c347f69c0797f5aa24c6df0b3c8ccf4e2f8a2c&profile_id=175" type="video/mp4" />
           </video>
         </div>
         
-        <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory/40 to-sealiah-sand/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory/40 to-sealiah-sand/40" aria-hidden="true" />
 
         <div className="relative z-10 text-center px-4 max-w-7xl mx-auto translate-y-8">
           <div className="flex flex-col items-center justify-center space-y-12">
@@ -84,7 +90,8 @@ function Home() {
             >
               <OptimizedImage 
                 src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Maison-Sealiah-prevenir-soigner-apaiser.png" 
-                alt="Maison Sealiah" 
+                alt="Logo Maison Sealiah - Prévenir, Soigner, Apaiser - Centre de kinésithérapie et ostéopathie" 
+                role="img"
                 className="w-full h-auto"
                 priority={true}
                 loading="eager"
@@ -94,14 +101,14 @@ function Home() {
             </motion.div>
 
             {/* First Phrase */}
-            <motion.p
+            <motion.h1
               className="text-2xl md:text-3xl lg:text-4xl font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               Le bien-être n'est plus une activité ou une mode, il répond à des besoins humains fondamentaux.
-            </motion.p>
+            </motion.h1>
 
             {/* Second Phrase */}
             <motion.p
@@ -120,23 +127,22 @@ function Home() {
               transition={{ duration: 0.8, delay: 1.2 }}
               className="mt-8 relative z-10 bg-gradient-to-b from-sealiah-ivory to-sealiah-sand p-0.5 rounded-full"
             >
-              <a
+              <AccessibleButton
                 href={doctolibUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 text-sealiah-ivory bg-sealiah-amber rounded-full
-                         hover:bg-sealiah-eucalyptus transition-all duration-300
-                         transform hover:scale-105"
+                className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
+                aria-label="Prendre rendez-vous avec Arnaud Benhamou sur Doctolib - Ouvre dans un nouvel onglet"
               >
                 Prendre rendez-vous
-              </a>
+              </AccessibleButton>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Présentation Section */}
-      <section className="py-20 px-6 bg-white/50">
+      <section className="py-20 px-6 bg-white/50" aria-labelledby="presentation-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,6 +150,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
+            <h2 id="presentation-heading" className="sr-only">Présentation de Maison Sealiah</h2>
             <AnimatedText 
               text="Maison Sealiah cultive une vision subtile de la santé : experte, respectueuse, profondément humaine. Votre bien-être n'est pas une tendance, mais un besoin fondamental. Nous mettons notre savoir-faire au service de ce qui compte vraiment : Vous."
               className="text-2xl md:text-3xl lg:text-4xl text-sealiah-amber max-w-4xl mx-auto leading-relaxed"
@@ -153,7 +160,7 @@ function Home() {
       </section>
 
       {/* Notre Approche Section */}
-      <section className="py-20 px-6 bg-white/50">
+      <section className="py-20 px-6 bg-white/50" aria-labelledby="approche-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -161,7 +168,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Notre Approche</h2>
+            <h2 id="approche-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Notre Approche</h2>
             <p className="text-xl text-sealiah-amber max-w-3xl mx-auto">
               Fusionner l'expertise thérapeutique et le raffinement du spa : la promesse de Maison Sealiah.
             </p>
@@ -172,17 +179,17 @@ function Home() {
               {
                 title: "Écoute et Personnalisation",
                 description: "Chaque personne est unique. Nous adaptons nos soins à vos besoins spécifiques.",
-                icon: <MessageSquare className="w-8 h-8" />
+                icon: <MessageSquare className="w-8 h-8" aria-hidden="true" />
               },
               {
                 title: "Savoir-faire thérapeutique",
                 description: "Une prise en charge experte et préventive",
-                icon: <Stethoscope className="w-8 h-8" />
+                icon: <Stethoscope className="w-8 h-8" aria-hidden="true" />
               },
               {
                 title: "Confiance et bienveillance",
                 description: "Un lieu dédié aux soins, aux détails sensoriels apaisants",
-                icon: <Heart className="w-8 h-8" />
+                icon: <Heart className="w-8 h-8" aria-hidden="true" />
               }
             ].map((value, index) => (
               <motion.div
@@ -195,6 +202,8 @@ function Home() {
                 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center group cursor-pointer"
+                role="article"
+                aria-labelledby={`value-${index}-title`}
               >
                 <motion.div 
                   className="text-sealiah-amber mb-4 flex justify-center"
@@ -203,7 +212,7 @@ function Home() {
                 >
                   {value.icon}
                 </motion.div>
-                <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-4 group-hover:text-sealiah-amber transition-colors duration-300">
+                <h3 id={`value-${index}-title`} className="text-2xl font-serif text-sealiah-eucalyptus mb-4 group-hover:text-sealiah-amber transition-colors duration-300">
                   {value.title}
                 </h3>
                 <p className="text-sealiah-amber group-hover:text-sealiah-eucalyptus transition-colors duration-300">
@@ -216,7 +225,7 @@ function Home() {
       </section>
 
       {/* Notre Équipe Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" aria-labelledby="equipe-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -224,7 +233,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Notre Équipe</h2>
+            <h2 id="equipe-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Notre Équipe</h2>
           </motion.div>
 
           <div className="max-w-2xl mx-auto">
@@ -234,10 +243,14 @@ function Home() {
               transition={{ duration: 0.8 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
-              <Link to="/praticien/arnaud-benhamou" className="block">
+              <Link 
+                to="/praticien/arnaud-benhamou" 
+                className="block focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded-lg"
+                aria-label="En savoir plus sur Arnaud Benhamou, Masseur-Kinésithérapeute Ostéopathe"
+              >
                 <OptimizedImage
-                  src="/images/arnaud-benhamou.jpg"
-                  alt="Arnaud Benhamou"
+                  src="/images/arnaud-benhamou.jpg" 
+                  alt="Portrait professionnel d'Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe, fondateur de Maison Sealiah"
                   className="w-40 h-40 rounded-full mx-auto mb-6 object-cover hover:scale-105 transition-transform duration-300"
                   width={160}
                   height={160}
@@ -253,7 +266,7 @@ function Home() {
       </section>
 
       {/* Nos Soins Signatures Section */}
-      <section className="py-20 px-6 bg-white/50">
+      <section className="py-20 px-6 bg-white/50" aria-labelledby="soins-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -261,7 +274,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Nos Soins Signatures</h2>
+            <h2 id="soins-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Nos Soins Signatures</h2>
             <p className="text-xl text-sealiah-amber max-w-3xl mx-auto">
               Un parcours de soins complet pour des bienfaits profonds et durables
             </p>
@@ -272,17 +285,20 @@ function Home() {
               {
                 title: "Massages Signature",
                 description: "Une fusion unique de techniques ancestrales et modernes",
-                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+                alt: "Séance de massage relaxant avec huiles essentielles dans un environnement zen et apaisant"
               },
               {
                 title: "Les Combos Sealiah",
                 description: "Une expérience de soin personnalisée et complète",
-                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+                alt: "Espace de soins holistiques combinant différentes techniques thérapeutiques"
               },
               {
                 title: "Soins Énergétiques",
                 description: "Harmonisation corps et esprit",
-                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+                alt: "Séance de soin énergétique avec bols tibétains pour l'harmonisation des chakras"
               }
             ].map((soin, index) => (
               <motion.div
@@ -291,17 +307,19 @@ function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
+                role="article"
+                aria-labelledby={`soin-${index}-title`}
               >
                 <OptimizedImage
-                  src={soin.image}
-                  alt={soin.title}
+                  src={soin.image} 
+                  alt={soin.alt}
                   className="w-full h-48 object-cover"
                   width={400}
                   height={192}
                   loading="lazy"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-4">
+                  <h3 id={`soin-${index}-title`} className="text-xl font-serif text-sealiah-eucalyptus mb-4">
                     {soin.title}
                   </h3>
                   <p className="text-sealiah-amber mb-6">
@@ -309,7 +327,8 @@ function Home() {
                   </p>
                   <Link
                     to="/soins"
-                    className="text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300"
+                    className="text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1"
+                    aria-label={`En savoir plus sur ${soin.title}`}
                   >
                     En savoir plus
                   </Link>
@@ -319,22 +338,21 @@ function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <a
+            <AccessibleButton
               href={doctolibUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 text-sealiah-ivory bg-sealiah-amber rounded-full
-                       hover:bg-sealiah-eucalyptus transition-all duration-300
-                       transform hover:scale-105"
+              className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
+              aria-label="Découvrir et réserver les Combos Sealiah sur Doctolib - Ouvre dans un nouvel onglet"
             >
               Les Combos Sealiah
-            </a>
+            </AccessibleButton>
           </div>
         </div>
       </section>
 
       {/* Journal Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" aria-labelledby="journal-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -342,7 +360,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-sealiah-eucalyptus mb-4">
+            <h2 id="journal-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">
               Journal de la santé et du bien-être
             </h2>
           </motion.div>
@@ -353,13 +371,15 @@ function Home() {
                 title: "Les bienfaits de la méditation",
                 date: "15 Mars 2024",
                 excerpt: "Découvrez comment la méditation peut transformer votre quotidien...",
-                image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
+                image: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                alt: "Personne en méditation dans un environnement paisible et naturel"
               },
               {
                 title: "Routine bien-être du matin",
                 date: "12 Mars 2024",
                 excerpt: "5 habitudes simples pour commencer la journée en pleine forme...",
-                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
+                image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                alt: "Routine matinale bien-être avec yoga et méditation au lever du soleil"
               }
             ].map((article, index) => (
               <motion.article
@@ -368,26 +388,30 @@ function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg"
+                aria-labelledby={`article-${index}-title`}
               >
                 <OptimizedImage
-                  src={article.image}
-                  alt={article.title}
+                  src={article.image} 
+                  alt={article.alt}
                   className="w-full h-64 object-cover"
                   width={600}
                   height={256}
                   loading="lazy"
                 />
                 <div className="p-6">
-                  <p className="text-sealiah-amber mb-2">{article.date}</p>
-                  <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
+                  <time className="text-sealiah-amber mb-2 block" dateTime={article.date}>
+                    {article.date}
+                  </time>
+                  <h3 id={`article-${index}-title`} className="text-2xl font-serif text-sealiah-eucalyptus mb-4">
                     {article.title}
                   </h3>
                   <p className="text-sealiah-amber mb-6">{article.excerpt}</p>
                   <Link
                     to="/journal"
-                    className="inline-flex items-center text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300"
+                    className="inline-flex items-center text-sealiah-eucalyptus hover:text-sealiah-amber transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1"
+                    aria-label={`Lire l'article complet: ${article.title}`}
                   >
-                    Lire l'article <ArrowRight className="ml-2 w-4 h-4" />
+                    Lire l'article <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>
               </motion.article>
@@ -397,7 +421,7 @@ function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-6 overflow-hidden">
+      <section className="py-20 px-6 overflow-hidden" aria-labelledby="avis-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -405,7 +429,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-sealiah-eucalyptus mb-4">
+            <h2 id="avis-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">
               Avis de nos patients
             </h2>
             <p className="text-xl text-sealiah-amber max-w-2xl mx-auto">
@@ -413,7 +437,12 @@ function Home() {
             </p>
           </motion.div>
 
-          <div className="relative">
+          <div 
+            className="relative"
+            role="region"
+            aria-label="Témoignages de patients"
+            aria-live="polite"
+          >
             <motion.div
               key={currentReview}
               initial={{ opacity: 0, x: 100 }}
@@ -421,9 +450,11 @@ function Home() {
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-3xl mx-auto"
+              role="article"
+              aria-labelledby={`review-${currentReview}-author`}
             >
               <div className="flex flex-col items-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-sealiah-eucalyptus flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-sealiah-eucalyptus flex items-center justify-center mb-4" aria-hidden="true">
                   <span className="text-sealiah-ivory text-xl font-semibold">
                     {getInitials(reviews[currentReview].name)}
                   </span>
@@ -431,46 +462,51 @@ function Home() {
                 <div className="flex items-center mb-2">
                   <OptimizedImage
                     src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
-                    alt="Google Logo"
+                    alt="Logo Google"
                     className="h-6 object-contain"
                     width={92}
                     height={30}
                     loading="lazy"
                   />
-                  <div className="flex ml-2">
+                  <div className="flex ml-2" role="img" aria-label="Note 5 étoiles sur 5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" aria-hidden="true" />
                     ))}
                   </div>
                 </div>
               </div>
-              <p className="text-sealiah-amber mb-4 italic text-center">
+              <blockquote className="text-sealiah-amber mb-4 italic text-center">
                 "{reviews[currentReview].text}"
-              </p>
-              <p className="text-sealiah-eucalyptus font-semibold text-center">
+              </blockquote>
+              <p id={`review-${currentReview}-author`} className="text-sealiah-eucalyptus font-semibold text-center">
                 {reviews[currentReview].name}
               </p>
             </motion.div>
 
             <button
               onClick={prevReview}
-              className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-sealiah-amber hover:text-sealiah-eucalyptus transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-sealiah-amber hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded"
+              aria-label="Témoignage précédent"
             >
-              <ChevronLeft className="w-8 h-8" />
+              <ChevronLeft className="w-8 h-8" aria-hidden="true" />
             </button>
             <button
               onClick={nextReview}
-              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-sealiah-amber hover:text-sealiah-eucalyptus transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-sealiah-amber hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded"
+              aria-label="Témoignage suivant"
             >
-              <ChevronRight className="w-8 h-8" />
+              <ChevronRight className="w-8 h-8" aria-hidden="true" />
             </button>
 
-            <div className="flex justify-center mt-6 space-x-2">
+            <div className="flex justify-center mt-6 space-x-2" role="tablist" aria-label="Navigation des témoignages">
               {reviews.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentReview(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
+                  role="tab"
+                  aria-selected={index === currentReview}
+                  aria-label={`Aller au témoignage ${index + 1}`}
+                  className={`w-2 h-2 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 ${
                     index === currentReview ? 'bg-sealiah-eucalyptus' : 'bg-sealiah-amber/30'
                   }`}
                 />
@@ -481,35 +517,34 @@ function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-white/50">
+      <section className="py-20 px-6 bg-white/50" aria-labelledby="cta-heading">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-serif text-sealiah-eucalyptus mb-6">
+            <h2 id="cta-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-6">
               Notre expertise au service de vos besoins
             </h2>
             <p className="text-xl text-sealiah-amber mb-8">
               Réservez dès maintenant votre séance et commencez votre voyage vers le bien-être.
             </p>
-            <a
+            <AccessibleButton
               href={doctolibUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 text-sealiah-ivory bg-sealiah-amber rounded-full
-                       hover:bg-sealiah-eucalyptus transition-all duration-300
-                       transform hover:scale-105"
+              className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
+              aria-label="Réserver votre Combo Sealiah sur Doctolib - Ouvre dans un nouvel onglet"
             >
               Réserver mon Combo Sealiah
-            </a>
+            </AccessibleButton>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6" aria-labelledby="contact-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -517,7 +552,7 @@ function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Contact</h2>
+            <h2 id="contact-heading" className="text-4xl font-serif text-sealiah-eucalyptus mb-4">Contact</h2>
           </motion.div>
 
           <motion.div
@@ -527,18 +562,36 @@ function Home() {
             className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-2xl mx-auto"
           >
             <h3 className="text-2xl font-serif text-sealiah-eucalyptus mb-6">Nos Coordonnées</h3>
-            <div className="space-y-4 text-sealiah-amber">
-              <p>9 rue roque de Fillol</p>
-              <p>92800 Puteaux, France</p>
-              <p>Tél : 06.03.73.68.38</p>
-              <p>Email : <a href="mailto:contact@maisonsealiah.fr" className="hover:text-sealiah-eucalyptus transition-colors">contact@maisonsealiah.fr</a></p>
+            <address className="space-y-4 text-sealiah-amber not-italic">
+              <p>
+                <span className="sr-only">Adresse : </span>
+                9 rue roque de Fillol<br />
+                92800 Puteaux, France
+              </p>
+              <p>
+                <span className="sr-only">Téléphone : </span>
+                <a href="tel:+33603736838" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">
+                  06.03.73.68.38
+                </a>
+              </p>
+              <p>
+                <span className="sr-only">Email : </span>
+                <a 
+                  href="mailto:contact@maisonsealiah.fr" 
+                  className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1"
+                  aria-label="Envoyer un email à contact@maisonsealiah.fr"
+                >
+                  contact@maisonsealiah.fr
+                </a>
+              </p>
+            </address>
             </div>
             <div className="mt-8">
               <h4 className="text-xl font-serif text-sealiah-eucalyptus mb-4">Horaires</h4>
-              <div className="space-y-2 text-sealiah-amber">
-                <p>Lundi - Vendredi : 8h - 20h</p>
-                <p>Samedi : Fermé</p>
-                <p>Dimanche : Fermé</p>
+              <div className="space-y-2 text-sealiah-amber" role="list">
+                <p role="listitem">Lundi - Vendredi : 8h - 20h</p>
+                <p role="listitem">Samedi : Fermé</p>
+                <p role="listitem">Dimanche : Fermé</p>
               </div>
             </div>
           </motion.div>

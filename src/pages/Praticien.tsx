@@ -7,7 +7,7 @@ function Praticien() {
   const doctolibUrl = "https://www.doctolib.fr/masseur-kinesitherapeute/levallois-perret/arnaud-benhamou-levallois-perret/booking?bookingFunnelSource=profile";
 
   return (
-    <div className="min-h-screen py-20 px-6">
+    <div className="min-h-screen py-20 px-6" role="main">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ function Praticien() {
           <div className="mb-8">
             <OptimizedImage
               src="/images/arnaud-benhamou.jpg"
-              alt="Arnaud Benhamou"
+              alt="Portrait professionnel d'Arnaud Benhamou, Masseur-Kinésithérapeute et Ostéopathe, fondateur de Maison Sealiah"
               className="w-48 h-48 rounded-full mx-auto object-cover mb-6"
               width={192}
               height={192}
@@ -31,16 +31,15 @@ function Praticien() {
               Masseur-Kinésithérapeute et Ostéopathe
             </p>
             <div className="mt-8">
-              <a
+              <AccessibleButton
                 href={doctolibUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 text-sealiah-ivory bg-sealiah-amber rounded-full
-                         hover:bg-sealiah-eucalyptus transition-all duration-300
-                         transform hover:scale-105"
+                className="text-sealiah-ivory bg-sealiah-amber hover:bg-sealiah-eucalyptus"
+                aria-label="Prendre rendez-vous avec Arnaud Benhamou sur Doctolib - Ouvre dans un nouvel onglet"
               >
                 Prendre rendez-vous
-              </a>
+              </AccessibleButton>
             </div>
           </div>
         </motion.div>
@@ -53,16 +52,16 @@ function Praticien() {
           className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg mb-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-center space-x-4 text-sealiah-amber">
-              <Phone className="w-5 h-5" />
-              <span>06.03.73.68.38</span>
+            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              <a href="tel:+33603736838" className="hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-1">06.03.73.68.38</a>
             </div>
-            <div className="flex items-center space-x-4 text-sealiah-amber">
-              <MapPin className="w-5 h-5" />
+            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
+              <MapPin className="w-5 h-5" aria-hidden="true" />
               <span>9 Rue Roque de Fillol, 92800 Puteaux, France</span>
             </div>
-            <div className="flex items-center space-x-4 text-sealiah-amber">
-              <Globe className="w-5 h-5" />
+            <div className="flex items-center space-x-4 text-sealiah-amber" role="contentinfo">
+              <Globe className="w-5 h-5" aria-hidden="true" />
               <span>Français, Anglais, Espagnol</span>
             </div>
           </div>
@@ -127,13 +126,13 @@ function Praticien() {
             <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-4">
               Diplômes nationaux et universitaires
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-4" role="list">
               <div>
-                <p className="text-sealiah-amber font-semibold">2022</p>
+                <p className="text-sealiah-amber font-semibold" role="listitem">2022</p>
                 <p className="text-sealiah-amber">Diplôme d'Ostéopathe (D.O.) - Collège Ostéopathique du Pays Basque (COPB)</p>
               </div>
               <div>
-                <p className="text-sealiah-amber font-semibold">2015</p>
+                <p className="text-sealiah-amber font-semibold" role="listitem">2015</p>
                 <p className="text-sealiah-amber">Diplôme d'État de Masseur-Kinésithérapeute - Université Alfonso X el Sabio (UAX) - Madrid</p>
               </div>
             </div>
@@ -144,7 +143,7 @@ function Praticien() {
             <h3 className="text-xl font-serif text-sealiah-eucalyptus mb-4">
               Autres formations
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-4" role="list">
               {[
                 {
                   year: "2020",
@@ -182,7 +181,7 @@ function Praticien() {
                   institution: "Kiné pédiatrie - Paris"
                 }
               ].map((formation, index) => (
-                <div key={index}>
+                <div key={index} role="listitem">
                   <p className="text-sealiah-amber font-semibold">{formation.year}</p>
                   <p className="text-sealiah-amber">{formation.title}</p>
                   <p className="text-sealiah-amber text-sm">{formation.institution}</p>
@@ -194,6 +193,5 @@ function Praticien() {
       </div>
     </div>
   );
-}
 
 export default Praticien;

@@ -5,7 +5,7 @@ import OptimizedImage from '../components/OptimizedImage';
 
 export default function NotreCabinet() {
   return (
-    <div className="min-h-screen py-20 px-6">
+    <div className="min-h-screen py-20 px-6" role="main">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function NotreCabinet() {
             <div>
               <OptimizedImage
                 src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
-                alt="Accueil du cabinet"
+                alt="Espace d'accueil moderne et chaleureux du cabinet de kinésithérapie Maison Sealiah"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
                 width={600}
                 height={384}
@@ -50,19 +50,19 @@ export default function NotreCabinet() {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center text-sealiah-amber">
-                  <MapPin className="w-5 h-5 mr-2" />
+                  <MapPin className="w-5 h-5 mr-2" aria-hidden="true" />
                   <span>31 Rue Rousselle, 92800 Puteaux</span>
                 </div>
                 <div className="flex items-center text-sealiah-amber">
-                  <Clock className="w-5 h-5 mr-2" />
+                  <Clock className="w-5 h-5 mr-2" aria-hidden="true" />
                   <span>Lun-Ven</span>
                 </div>
                 <div className="flex items-center text-sealiah-amber">
-                  <Phone className="w-5 h-5 mr-2" />
+                  <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
                   <span>Sur RDV</span>
                 </div>
                 <div className="flex items-center text-sealiah-amber">
-                  <Users className="w-5 h-5 mr-2" />
+                  <Users className="w-5 h-5 mr-2" aria-hidden="true" />
                   <span>Accès PMR</span>
                 </div>
               </div>
@@ -80,22 +80,25 @@ export default function NotreCabinet() {
           <h2 className="text-3xl font-serif text-sealiah-eucalyptus mb-8 text-center">
             Nos Salles de Soins
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-8" aria-label="Présentation des salles de soins">
             {[
               {
                 title: "Salle de Kinésithérapie",
                 description: "Équipée de tables électriques et de matériel spécialisé pour les soins thérapeutiques.",
-                image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+                image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+                alt: "Salle de kinésithérapie équipée de tables électriques et matériel thérapeutique professionnel"
               },
               {
                 title: "Espace Bien-être",
                 description: "Un cadre apaisant pour les massages et soins relaxants.",
-                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+                alt: "Espace bien-être avec ambiance zen et relaxante pour massages et soins de détente"
               },
               {
                 title: "Salle de Consultation",
                 description: "Pour les bilans et suivis personnalisés dans un cadre confidentiel.",
-                image: "https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80"
+                image: "https://images.unsplash.com/photo-1519494140681-8b17d830a3e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=300&q=80",
+                alt: "Salle de consultation privée pour bilans et suivis personnalisés des patients"
               }
             ].map((room, index) => (
               <motion.div
@@ -107,7 +110,7 @@ export default function NotreCabinet() {
               >
                 <OptimizedImage
                   src={room.image}
-                  alt={room.title}
+                  alt={room.alt}
                   className="w-full h-48 object-cover"
                   width={400}
                   height={192}
@@ -123,7 +126,7 @@ export default function NotreCabinet() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </section>
         </motion.section>
 
         {/* Plateau technique */}
@@ -141,7 +144,7 @@ export default function NotreCabinet() {
               <div>
                 <OptimizedImage
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
-                  alt="Plateau technique"
+                  alt="Plateau technique de rééducation équipé d'appareils de musculation et cardio-training adaptés"
                   className="w-full h-96 object-cover rounded-lg shadow-lg"
                   width={600}
                   height={384}
@@ -159,15 +162,15 @@ export default function NotreCabinet() {
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center text-sealiah-amber">
-                    <Dumbbell className="w-5 h-5 mr-3" />
+                    <Dumbbell className="w-5 h-5 mr-3" aria-hidden="true" />
                     Équipements de musculation adaptés
                   </li>
                   <li className="flex items-center text-sealiah-amber">
-                    <Heart className="w-5 h-5 mr-3" />
+                    <Heart className="w-5 h-5 mr-3" aria-hidden="true" />
                     Matériel cardio-training
                   </li>
                   <li className="flex items-center text-sealiah-amber">
-                    <Users className="w-5 h-5 mr-3" />
+                    <Users className="w-5 h-5 mr-3" aria-hidden="true" />
                     Espace pour exercices guidés
                   </li>
                 </ul>
@@ -185,7 +188,7 @@ export default function NotreCabinet() {
           <h2 className="text-3xl font-serif text-sealiah-eucalyptus mb-8 text-center">
             Nos Équipements
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" aria-label="Équipements disponibles">
             {[
               {
                 title: "Tables de massage électriques",
@@ -219,7 +222,7 @@ export default function NotreCabinet() {
                 </p>
               </motion.div>
             ))}
-          </div>
+          </section>
         </motion.section>
       </div>
     </div>

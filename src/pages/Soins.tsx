@@ -4,7 +4,7 @@ import OptimizedImage from '../components/OptimizedImage';
 
 export default function Soins() {
   return (
-    <div className="min-h-screen py-20 px-6">
+    <div className="min-h-screen py-20 px-6" role="main">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export default function Soins() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20" aria-label="Types de soins proposés">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -29,7 +29,7 @@ export default function Soins() {
           >
             <OptimizedImage
               src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Massage relaxant"
+              alt="Séance de massage relaxant avec huiles essentielles dans un environnement zen et apaisant"
               className="w-full h-64 object-cover rounded-lg mb-6"
               width={600}
               height={256}
@@ -42,7 +42,7 @@ export default function Soins() {
               Nos massages signature allient techniques ancestrales et innovations modernes pour une
               expérience unique de détente profonde.
             </p>
-            <ul className="text-sealiah-amber space-y-2">
+            <ul className="text-sealiah-amber space-y-2" role="list">
               <li>• Massage relaxant aux huiles essentielles</li>
               <li>• Massage deep tissue</li>
               <li>• Massage aux pierres chaudes</li>
@@ -57,7 +57,7 @@ export default function Soins() {
           >
             <OptimizedImage
               src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80"
-              alt="Soin énergétique"
+              alt="Séance de soin énergétique avec bols tibétains pour l'harmonisation des chakras"
               className="w-full h-64 object-cover rounded-lg mb-6"
               width={600}
               height={256}
@@ -70,13 +70,13 @@ export default function Soins() {
               Rééquilibrez vos énergies et retrouvez votre harmonie intérieure avec nos soins
               énergétiques personnalisés.
             </p>
-            <ul className="text-sealiah-amber space-y-2">
+            <ul className="text-sealiah-amber space-y-2" role="list">
               <li>• Reiki traditionnel</li>
               <li>• Soin aux bols tibétains</li>
               <li>• Harmonisation des chakras</li>
             </ul>
           </motion.div>
-        </div>
+        </section>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function Soins() {
           </p>
           <OptimizedImage
             src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80"
-            alt="Ambiance zen"
+            alt="Ambiance zen et relaxante d'un espace de soins avec éclairage tamisé et décoration naturelle"
             className="w-full h-96 object-cover rounded-lg"
             width={1200}
             height={384}
