@@ -10,6 +10,7 @@ import Specialites from './pages/Specialites.tsx';
 import NotreCabinet from './pages/NotreCabinet';
 import Journal from './pages/Journal';
 import Praticien from './pages/Praticien';
+import { useMobileScrollFix } from './utils/mobileScrollFix';
 
 // Hook pour détecter si on est sur mobile
 const useIsMobile = () => {
@@ -100,6 +101,9 @@ function AnimatedRoutes() {
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  
+  // Applique les corrections de scroll mobile
+  useMobileScrollFix();
 
   const menuItems = [
     { path: '/', label: 'Accueil' },
@@ -134,6 +138,7 @@ function App() {
                   <Link 
                     to={path}
                     className="nav-link text-sm tracking-wider hover:text-sealiah-eucalyptus transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-2 py-1"
+                    onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
                     aria-current={location.pathname === path ? 'page' : undefined}
                   >
                     {label}
@@ -148,6 +153,7 @@ function App() {
                 to="/"
                 className="text-sealiah-amber text-lg font-serif focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-2 py-1"
                 onClick={() => setIsMenuOpen(false)}
+                onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
                 aria-label="Retour à l'accueil - Maison Sealiah"
               >
                 Maison Sealiah
@@ -155,6 +161,7 @@ function App() {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-sealiah-amber p-2 focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded"
+                onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
@@ -182,6 +189,7 @@ function App() {
                           role="menuitem"
                           className="text-sealiah-amber hover:text-sealiah-eucalyptus transition-colors duration-300 py-2 text-center block focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded px-2"
                           onClick={() => setIsMenuOpen(false)}
+                          onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
                           aria-current={location.pathname === path ? 'page' : undefined}
                         >
                           {label}

@@ -89,9 +89,12 @@ function Home() {
       
       {/* Hero Section */}
       <section 
-        className={`relative ${isMobile ? 'min-h-screen' : 'min-h-screen'} flex items-center justify-center overflow-hidden -mt-10`}
+        className="hero-section relative min-h-screen flex items-center justify-center overflow-hidden -mt-10"
         aria-label="Section d'accueil principale"
-        style={isMobile ? { minHeight: 'calc(100vh - 80px)' } : {}}
+        style={isMobile ? { 
+          minHeight: 'calc(var(--vh, 1vh) * 100 - 80px)',
+          transform: 'translateZ(0)' 
+        } : {}}
       >
         {/* Vidéo désactivée sur mobile pour éviter les problèmes de performance */}
         {!isMobile && (
@@ -532,6 +535,7 @@ function Home() {
             <button
               onClick={prevReview}
               className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-sealiah-amber hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded"
+              onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
               aria-label="Témoignage précédent"
             >
               <ChevronLeft className="w-8 h-8" aria-hidden="true" />
@@ -539,6 +543,7 @@ function Home() {
             <button
               onClick={nextReview}
               className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-sealiah-amber hover:text-sealiah-eucalyptus transition-colors focus:outline-none focus:ring-2 focus:ring-sealiah-eucalyptus focus:ring-offset-2 rounded"
+              onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
               aria-label="Témoignage suivant"
             >
               <ChevronRight className="w-8 h-8" aria-hidden="true" />
@@ -549,6 +554,7 @@ function Home() {
                 <button
                   key={index}
                   onClick={() => setCurrentReview(index)}
+                  onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
                   role="tab"
                   aria-selected={index === currentReview}
                   aria-label={`Aller au témoignage ${index + 1}`}

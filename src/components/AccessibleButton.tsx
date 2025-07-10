@@ -51,6 +51,7 @@ const AccessibleButton: React.FC<AccessibleButtonProps> = ({
         className={baseClasses}
         aria-label={ariaLabel}
         aria-describedby={ariaDescribedBy}
+        onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
         {...motionProps}
       >
         {children}
@@ -66,6 +67,7 @@ const AccessibleButton: React.FC<AccessibleButtonProps> = ({
       className={baseClasses}
       aria-label={ariaLabel}
       aria-describedby={ariaDescribedBy}
+      onMouseDown={(e) => e.preventDefault()} // Empêche le focus au clic
       {...motionProps}
     >
       {children}
