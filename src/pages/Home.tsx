@@ -287,7 +287,7 @@ function Home() {
                 subtitle: "",
                 description: "• Ostéopathie postnatale ciblée : adaptée aux suites de l'accouchement, pour libérer les tensions et soutenir la récupération corporelle.\n• Massage du corps entier à l'huile chaude : profondément relaxant, il apaise le système nerveux et relâche les tissus.\n• Rituel de resserrage du bassin : inspiré des traditions balinaises, il favorise le recentrage du bassin, la détente et le soutien tissulaire.",
                 indication: "Idéal pour : offrir aux jeunes mamans un véritable temps de régénération physique, émotionnelle et énergétique, dans une bulle de douceur et de force retrouvée.",
-                image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                image: "https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//soin-postnatal-enveloppant-osteopathie-massage-resserrage-bassin-maison-sealiah1",
                 alt: "Soin postnatal enveloppant pour jeunes mamans avec massage relaxant"
               }
             ].map((combo, index) => (
