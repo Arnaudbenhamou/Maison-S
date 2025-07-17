@@ -95,13 +95,14 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-sealiah-ivory to-sealiah-sand" aria-hidden="true" />
 
         <div className="relative z-10 text-center px-4 max-w-7xl mx-auto translate-y-8">
-          <div className="flex flex-col items-center justify-center space-y-12">
+          <div className="flex flex-col items-center justify-center space-y-0" style={{ marginTop: '0cm' }}>
             {/* Logo */}
             <motion.div 
               className="w-[90vw] sm:w-[500px] md:w-[600px] lg:w-[700px]"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
+              style={{ marginTop: '-1cm', marginBottom: '1cm' }}
             >
               <OptimizedImage 
                 src="https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Maison-Sealiah-prevenir-soigner-apaiser.png" 
@@ -117,30 +118,44 @@ function Home() {
 
             {/* First Phrase */}
             <motion.h1
-              className="text-2xl md:text-3xl lg:text-4xl font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
+              className="font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
+              style={{ fontSize: '12pt' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Le bien-être n'est plus une activité ou une mode, il répond à des besoins humains fondamentaux.
+              Bienvenue chez Maison Sealiah, un lieu où l'on cultive une vision subtile de la santé : experte, respectueuse et profondément humaine.
             </motion.h1>
 
             {/* Second Phrase */}
             <motion.p
-              className="text-xl md:text-2xl lg:text-3xl font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
+              className="font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
+              style={{ fontSize: '12pt' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              STOP THINKING, JUST FEEL IT...
+              Votre bien-être n'est plus une activité ou une mode, il répond à des besoins humains fondamentaux.
+            </motion.p>
+
+            {/* Third Phrase */}
+            <motion.p
+              className="font-serif text-sealiah-eucalyptus leading-relaxed max-w-4xl"
+              style={{ fontSize: '12pt' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              Chez Maison Sealiah nous mettons notre expertise au service de vos besoins.
             </motion.p>
 
             {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="mt-8 relative z-10 bg-gradient-to-b from-sealiah-ivory to-sealiah-sand p-0.5 rounded-full"
+              transition={{ duration: 0.8, delay: 1.6 }}
+              className="relative z-10 bg-gradient-to-b from-sealiah-ivory to-sealiah-sand p-0.5 rounded-full"
+              style={{ marginTop: "calc(2rem - 0.5cm)" }}
             >
               <AccessibleButton
                 href={doctolibUrl}
@@ -156,26 +171,8 @@ function Home() {
         </div>
       </section>
 
-      {/* Présentation Section */}
-      <section className="py-20 px-6 bg-white/50" aria-labelledby="presentation-heading">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 id="presentation-heading" className="sr-only">Présentation de Maison Sealiah</h2>
-            <AnimatedText 
-              text="Bienvenue chez Maison Sealiah, un lieu où l'on cultive une vision subtile de la santé : experte, respectueuse et profondément humaine. Votre bien-être n'est plus une activité ou une mode, il répond à des besoins humains fondamentaux. Chez Maison Sealiah nous mettons notre expertise au service de vos besoins."
-              className="text-2xl md:text-3xl lg:text-4xl text-sealiah-amber max-w-4xl mx-auto leading-relaxed"
-            />
-          </motion.div>
-        </div>
-      </section>
-
       {/* Notre Approche Section */}
-      <section className="py-20 px-6 bg-white/50" aria-labelledby="approche-heading">
+      <section className="px-6 bg-white/50" style={{ paddingTop: "calc(5rem + 1cm - 2cm)", paddingBottom: "5rem" }} aria-labelledby="approche-heading">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -252,7 +249,7 @@ function Home() {
             <div className="text-xl text-sealiah-amber max-w-4xl mx-auto space-y-4">
               <p>Un voyage de soins en plusieurs temps.</p>
               <p>Pensés comme des rituels thérapeutiques complets, les Combos Sealiah associent plusieurs pratiques manuelles au sein d'un même rendez-vous pour renforcer leur synergie.</p>
-              <p>À la croisée de la thérapie et du bien-être, nos Combos Sealiah sont des parcours de soins <strong>EXCLUSIFS</strong> et <strong>PERSONNALISABLES</strong>, pensés pour vous offrir des bienfaits profonds et durables.</p>
+              <p>À la croisée de la thérapie et du bien-être, nos Combos Sealiah sont des parcours de soins <strong>exclusifs</strong> et <strong>pesonnalisables</strong>, pensés pour vous offrir des bienfaits profonds et durables.</p>
             </div>
           </motion.div>
 
@@ -261,25 +258,25 @@ function Home() {
               {
                 title: "Ostéopathie & Massage corps entier aux huiles chaudes",
                 subtitle: "Apaisement profond & rééquilibrage.",
-                description: "• Ostéopathie ciblée : libération des tensions mécaniques et restauration de la mobilité articulaire.\n• Massage enveloppant à l'huile chaude : détente profonde des tissus, apaisement du système nerveux et intégration du travail ostéopathique.",
+                description: "• Ostéopathie ciblée\n• Libération des tensions mécaniques et restauration de la mobilité articulaire\n• Massage enveloppant à l'huile chaude : détente profonde des tissus, apaisement du système nerveux et intégration du travail ostéopathique.",
                 indication: "Indications : idéal en cas de surcharge mentale, douleurs chroniques ou besoin de régulation profonde.",
-                image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                image: "https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Osteopathie-Massage-corps-%20entier-aux-huiles%20chaudes.png",
                 alt: "Massage corps entier aux huiles chaudes dans un environnement zen et apaisant"
               },
               {
                 title: "Ostéopathie & Massage corps entier aux pochons d'herbes médicinales",
                 subtitle: "Soin rituel & chaleur médicinale",
-                description: "• Ostéopathie ciblée\n• Massage aux pochons d'herbes chaudes : diffusion des vertus des plantes médicinales par la chaleur et la vapeur, pour détendre les muscles en profondeur et favoriser l'élimination des tensions.",
+                description: "• Ostéopathie ciblée\n• Libération des tensions mécaniques et restauration de la mobilité articulaire\n• Massage aux pochons d'herbes chaudes : diffusion des vertus des plantes médicinales par la chaleur et la vapeur, pour détendre les muscles en profondeur et favoriser l'élimination des tensions.",
                 indication: "Indications : idéal pour les corps fatigués, les douleurs diffuses ou les périodes de transition.",
-                image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                image: "https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Osteopathie-%20Massage-corps%20-entier-aux-pochons-herbes%20medicinales.png",
                 alt: "Massage aux pochons d'herbes médicinales chaudes avec vapeur thérapeutique"
               },
               {
                 title: "Ostéopathie & Massage Corps Entier aux ventouses chaudes",
                 subtitle: "Libération tissulaire & circulation renforcée",
-                description: "• Ostéopathie ciblée\n• Massage combiné aux ventouses chaudes : alternance de gestes manuels et d'application de ventouses pour stimuler la circulation sanguine et lymphatique, libérer les fascias et soulager les stagnations.",
+                description: "• Ostéopathie ciblée\n• Libération des tensions mécaniques et restauration de la mobilité articulaire\n• Massage combiné aux ventouses chaudes : alternance de gestes manuels et d'application de ventouses pour stimuler la circulation sanguine et lymphatique, libérer les fascias et soulager les stagnations.",
                 indication: "Indications : idéal pour les douleurs musculaires, la récupération physique ou les sensations de lourdeur corporelle.",
-                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+                image: "https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//Osteopathie-Massage-Corps-Entier-aux-ventouses-chaudes.png",
                 alt: "Massage thérapeutique avec ventouses chaudes pour stimuler la circulation"
               },
               {
@@ -287,7 +284,7 @@ function Home() {
                 subtitle: "",
                 description: "• Ostéopathie postnatale ciblée : adaptée aux suites de l'accouchement, pour libérer les tensions et soutenir la récupération corporelle.\n• Massage du corps entier à l'huile chaude : profondément relaxant, il apaise le système nerveux et relâche les tissus.\n• Rituel de resserrage du bassin : inspiré des traditions balinaises, il favorise le recentrage du bassin, la détente et le soutien tissulaire.",
                 indication: "Idéal pour : offrir aux jeunes mamans un véritable temps de régénération physique, émotionnelle et énergétique, dans une bulle de douceur et de force retrouvée.",
-                image: "https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//soin-postnatal-enveloppant-osteopathie-massage-resserrage-bassin-maison-sealiah1",
+                image: "https://eniofgrvwufhyeumeetp.supabase.co/storage/v1/object/public/images-maison-sealiah//soin-postnatal-enveloppant-osteopathie-massage-resserrage-bassin-maison-sealiah.png",
                 alt: "Soin postnatal enveloppant pour jeunes mamans avec massage relaxant"
               }
             ].map((combo, index) => (
