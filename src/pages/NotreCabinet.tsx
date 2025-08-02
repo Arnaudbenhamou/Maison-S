@@ -68,7 +68,7 @@ export default function NotreCabinet() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center text-sealiah-amber">
                   <MapPin className="w-5 h-5 mr-2" aria-hidden="true" />
-                  <span>31 Rue Rousselle, 92800 Puteaux</span>
+                  <span>9 Rue Roque de Fillol, 92800 Puteaux</span>
                 </div>
                 <div className="flex items-center text-sealiah-amber">
                   <Clock className="w-5 h-5 mr-2" aria-hidden="true" />
