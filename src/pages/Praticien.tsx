@@ -27,26 +27,11 @@ function Praticien() {
       </Helmet>
       
       <div className="max-w-7xl mx-auto">
-        {/* En-tête */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-5xl font-serif text-sealiah-eucalyptus mb-6">
-            Notre Équipe
-          </h1>
-          <p className="text-xl text-sealiah-amber max-w-2xl mx-auto">
-            Rencontrez les professionnels qui vous accompagnent dans votre parcours de santé et de bien-être.
-          </p>
-        </motion.div>
-
         {/* Présentation de Maison Sealiah */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8 }}
           className="mb-20"
           aria-labelledby="maison-sealiah-presentation"
         >
@@ -93,7 +78,7 @@ function Praticien() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -143,7 +128,7 @@ function Praticien() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -195,7 +180,7 @@ function Praticien() {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-16"
           aria-labelledby="arnaud-qualifications"
         >
@@ -279,7 +264,7 @@ function Praticien() {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center"
           aria-labelledby="contact-info"
         >
