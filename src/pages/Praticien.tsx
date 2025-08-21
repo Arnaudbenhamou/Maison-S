@@ -27,18 +27,27 @@ function Praticien() {
       </Helmet>
       
       <div className="max-w-7xl mx-auto">
+        {/* Titre principal de la page */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl md:text-5xl font-serif text-sealiah-eucalyptus mb-6">
+            Maison Sealiah - L'équipe
+          </h1>
+        </motion.div>
+
         {/* Présentation de Maison Sealiah */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-20"
           aria-labelledby="maison-sealiah-presentation"
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h2 id="maison-sealiah-presentation" className="text-3xl font-serif text-sealiah-eucalyptus mb-6 text-center">
-              Maison Sealiah
-            </h2>
             <div className="text-sealiah-amber leading-relaxed space-y-4">
               <p>
                 Maison Sealiah est un lieu de soin pensé pour conjuguer rigueur thérapeutique, accompagnement global et expérience sensorielle.
@@ -78,7 +87,7 @@ function Praticien() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -128,7 +137,7 @@ function Praticien() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -180,7 +189,7 @@ function Praticien() {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-16"
           aria-labelledby="arnaud-qualifications"
         >
@@ -264,7 +273,7 @@ function Praticien() {
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
           className="text-center"
           aria-labelledby="contact-info"
         >
