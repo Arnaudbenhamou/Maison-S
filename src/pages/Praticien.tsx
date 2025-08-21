@@ -42,14 +42,58 @@ function Praticien() {
           </p>
         </motion.div>
 
+        {/* Présentation de Maison Sealiah */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-20"
+          aria-labelledby="maison-sealiah-presentation"
+        >
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+            <h2 id="maison-sealiah-presentation" className="text-3xl font-serif text-sealiah-eucalyptus mb-6 text-center">
+              Maison Sealiah
+            </h2>
+            <div className="text-sealiah-amber leading-relaxed space-y-4">
+              <p>
+                Maison Sealiah est un lieu de soin pensé pour conjuguer rigueur thérapeutique, accompagnement global et expérience sensorielle.
+              </p>
+              <p>
+                Notre équipe pluridisciplinaire regroupe des professionnels spécialisés en kinésithérapie, ostéopathie et coaching sportif, engagés autour d'un objectif commun : prendre soin du corps dans toutes ses dimensions, à chaque étape de la vie.
+              </p>
+              <p>
+                Ici, la prise en charge ne se limite pas au geste technique : elle s'inscrit dans une attention globale, personnalisée et humaine. Chaque séance est pensée comme un temps de respiration, dans un cadre apaisant, où l'expertise, le confort, la discrétion et l'écoute sont au cœur de notre démarche.
+              </p>
+              <p>
+                Chez Maison Sealiah, la précision du geste, la qualité du toucher, le soin apporté à chaque détail et la bienveillance de notre équipe font partie de notre ADN.
+              </p>
+              <p>
+                Un lieu où l'on vient pour se soigner, mais aussi pour se recentrer, se reconnecter à soi.
+              </p>
+              <p className="text-center font-serif text-sealiah-eucalyptus text-lg mt-6">
+                Au plaisir de vous rencontrer.<br />
+                L'équipe Maison Sealiah.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Présentation de l'équipe */}
         <section className="mb-20" aria-labelledby="team-members">
+          <div className="text-center mb-12">
+            <h2 id="team-members" className="text-3xl font-serif text-sealiah-eucalyptus mb-4">
+              Notre Équipe
+            </h2>
+            <p className="text-lg text-sealiah-amber max-w-2xl mx-auto">
+              Rencontrez nos praticiens experts qui vous accompagnent avec passion et professionnalisme.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* Arnaud Benhamou */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -99,7 +143,7 @@ function Praticien() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg text-center"
             >
               <OptimizedImage
@@ -146,42 +190,6 @@ function Praticien() {
             </motion.div>
           </div>
         </section>
-
-        {/* Texte de présentation de Maison Sealiah */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-16"
-          aria-labelledby="maison-sealiah-presentation"
-        >
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-            <h2 id="maison-sealiah-presentation" className="text-3xl font-serif text-sealiah-eucalyptus mb-6 text-center">
-              Maison Sealiah
-            </h2>
-            <div className="text-sealiah-amber leading-relaxed space-y-4">
-              <p>
-                Maison Sealiah est un lieu de soin pensé pour conjuguer rigueur thérapeutique, accompagnement global et expérience sensorielle.
-              </p>
-              <p>
-                Notre équipe pluridisciplinaire regroupe des professionnels spécialisés en kinésithérapie, ostéopathie et coaching sportif, engagés autour d'un objectif commun : prendre soin du corps dans toutes ses dimensions, à chaque étape de la vie.
-              </p>
-              <p>
-                Ici, la prise en charge ne se limite pas au geste technique : elle s'inscrit dans une attention globale, personnalisée et humaine. Chaque séance est pensée comme un temps de respiration, dans un cadre apaisant, où l'expertise, le confort, la discrétion et l'écoute sont au cœur de notre démarche.
-              </p>
-              <p>
-                Chez Maison Sealiah, la précision du geste, la qualité du toucher, le soin apporté à chaque détail et la bienveillance de notre équipe font partie de notre ADN.
-              </p>
-              <p>
-                Un lieu où l'on vient pour se soigner, mais aussi pour se recentrer, se reconnecter à soi.
-              </p>
-              <p className="text-center font-serif text-sealiah-eucalyptus text-lg mt-6">
-                Au plaisir de vous rencontrer.<br />
-                L'équipe Maison Sealiah.
-              </p>
-            </div>
-          </div>
-        </motion.section>
 
         {/* Diplômes et formations d'Arnaud */}
         <motion.section
