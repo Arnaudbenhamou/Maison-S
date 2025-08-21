@@ -300,8 +300,7 @@ function Praticien() {
             <div className="mt-8">
               <h3 className="text-lg font-serif text-sealiah-eucalyptus mb-4">Horaires</h3>
               <div className="space-y-2 text-sealiah-amber" role="list">
-                <p role="listitem">Lundi - Vendredi : 8h - 20h</p>
-                <p role="listitem">Samedi : Fermé</p>
+                <p role="listitem">Lundi - Samedi : 8h - 20h</p>
                 <p role="listitem">Dimanche : Fermé</p>
               </div>
             </div>
